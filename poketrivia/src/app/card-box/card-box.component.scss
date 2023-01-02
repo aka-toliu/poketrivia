@@ -8,4 +8,18 @@
     display: flex;
     align-items: center;
     padding: 16px;
+
+    .card-drop{
+        width: 200px;
+        height: 200px;
+        background-color: white;
+        box-shadow: -6px 21px 21px rgba(0, 0, 0, 0.13);
+        border-radius: 10px;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        user-select: none;
+        margin: 10px;
+    }
 }

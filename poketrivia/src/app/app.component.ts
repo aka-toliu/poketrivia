@@ -24,7 +24,7 @@ export class AppComponent {
         this.allPokemon = res.results;
         this.pokebox = this.poketriviaService.pokebox;
 
-        console.log(this.pokebox);
+        // console.log(this.pokebox);
         
         setTimeout(() => {
           this.randomizePokemon();
@@ -41,7 +41,7 @@ export class AppComponent {
 
     this.randomPokemon = this.allPokemon[number];
 
-    console.log(this.randomPokemon);
+    // console.log(this.randomPokemon);
     
 
   }

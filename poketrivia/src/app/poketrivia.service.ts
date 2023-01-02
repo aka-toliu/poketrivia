@@ -20,8 +20,8 @@ export class PoketriviaService {
       type2: "poison"
     },
     {
-      name: "bulbasaur",
-      id: 1,
+      name: "venosaur",
+      id: 2,
       type1: "grass",
       type2: "poison"
     }

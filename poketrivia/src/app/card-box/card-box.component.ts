@@ -19,4 +19,50 @@ export class CardBoxComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  dropCheck(event: any){
+
+    // console.log(event.target.nextSibling);
+
+    if (event.offsetX < 100) {
+
+      // console.log('esquerda');
+
+      event.target.style.transform = "translateX(10px)"
+
+     
+        
+
+        if (event.target.previousSibling !== null && event.target.previousSibling.classList.contains('card-drop')) {
+          console.log(event.target.previousSibling.id)
+        }
+      
+      
+      
+    }
+    
+    else if (event.offsetX > 100){
+      // console.log('direita');
+
+      event.target.style.transform = "translateX(-10px)"
+
+      if (event.target.nextSibling.tagName == 'DIV') {
+        console.log(event.target.nextSibling.id)
+      }
+        
+      
+    }
+
+
+    
+
+  }
+
+  dragLeave(event: any){
+
+    // console.log(event);
+    
+
+    event.target.style.transform = "translateX(0px)"
+  }
 }

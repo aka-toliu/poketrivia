@@ -1,6 +1,8 @@
 <div class="card-box">
    
-    <app-poke-card *ngFor="let pokemon of pokebox">
-        
-    </app-poke-card>
+    <div class="card-drop" *ngFor="let pokemon of pokebox" (dragover)="dropCheck($event)" (dragleave)="dragLeave($event)" id="{{ pokemon.id }}">
+            {{ pokemon.name }}
+
+        #{{ pokemon.id }}
+    </div >
 </div>
