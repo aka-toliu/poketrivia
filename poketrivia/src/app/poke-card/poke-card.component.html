@@ -1,0 +1,14 @@
+<div class="poke-card" draggable="true" (dragstart)="carddrag();">
+<h3> {{ nome | titlecase  }}</h3>
+
+
+<div class="poke-card__tipos">
+    <span class="{{ tipo1 }}"> {{ tipo1 }} </span>
+    <span class="{{ tipo2 }}"> {{ tipo2 }} </span>
+</div>
+
+<div class="poke-card__sprite">
+    <img src="{{ sprite }}" alt="" draggable="false">
+</div>
+
+</div>
