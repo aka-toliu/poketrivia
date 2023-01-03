@@ -9,9 +9,11 @@
     align-items: center;
     padding: 16px;
     overflow-x: auto;
+    overflow-y: hidden;
+    transition: all 0.6s;
 
     .card-drop{
-        width: 200px;
+        min-width: 200px;
         height: 200px;
         background-color: white;
         box-shadow: -6px 21px 21px rgba(0, 0, 0, 0.13);
@@ -61,4 +63,13 @@
         position: absolute;
         right: -200px;
     }
+}
+
+.certo{
+    border: 5px solid rgb(39, 143, 103);
+}
+
+
+.errado{
+    border: 5px solid rgb(143, 39, 39);
 }

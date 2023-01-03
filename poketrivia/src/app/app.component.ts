@@ -31,32 +31,38 @@ export class AppComponent {
         res => 
 
       { 
-        this.allPokemon = res.results;
+        this.poketriviaService.pokemon = res.results;
         this.pokebox = this.poketriviaService.pokebox;
         
         setTimeout(() => {
-          this.randomizePokemon();
-          this.randomizeInitPokemon();
+          this.poketriviaService.randomizePokemon();
+          this.poketriviaService.randomizeInitPokemon();
+          this.randomPokemon = this.poketriviaService.randomPokemon;
+          this.initPokemon = this.poketriviaService.initPokemon;
         }, 300);
       }
         
       )
 
+      this.poketriviaService.newpokemon$.subscribe( res => {
+        this.randomPokemon = res
+       } )
+
   }
 
-  randomizePokemon(){
-    let number = Math.floor(Math.random() * this.allPokemon.length);
-    this.randomPokemon = this.allPokemon[number];
-    this.poketriviaService.actualPokemon = this.randomPokemon;
-  }
+  // randomizePokemon(){
+  //   let number = Math.floor(Math.random() * this.allPokemon.length);
+  //   this.randomPokemon = this.allPokemon[number];
+  //   this.poketriviaService.randomPokemon = this.randomPokemon;
+  // }
 
-  randomizeInitPokemon(){
-    let number = Math.floor(Math.random() * this.allPokemon.length);
-    this.initPokemon.name = this.allPokemon[number].name;
-    this.initPokemon.id = this.allPokemon[number].dex.id;
-    this.initPokemon.sprite = this.allPokemon[number].dex.sprites.front_default;
-    this.poketriviaService.pokebox.push(this.initPokemon)
-  }
+  // randomizeInitPokemon(){
+  //   let number = Math.floor(Math.random() * this.allPokemon.length);
+  //   this.initPokemon.name = this.allPokemon[number].name;
+  //   this.initPokemon.id = this.allPokemon[number].dex.id;
+  //   this.initPokemon.sprite = this.allPokemon[number].dex.sprites.front_default;
+  //   this.poketriviaService.pokebox.push(this.initPokemon)
+  // }
 
 
 }

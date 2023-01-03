@@ -83,6 +83,9 @@ export class CardBoxComponent implements OnInit {
     event.target.removeAttribute('style')
     console.log("droped");
     event.target.classList.remove('left-place', 'right-place');
-    this.poketriviaService.pokebox.push(this.poketriviaService.actualPokemon);
+    this.poketriviaService.pokebox.push(this.poketriviaService.randomPokemon);
+    this.poketriviaService.randomizePokemon();
+
+    this.poketriviaService.sortPokemon();
   }
 }
