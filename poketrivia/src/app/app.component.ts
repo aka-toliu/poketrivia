@@ -11,6 +11,14 @@ export class AppComponent {
   public allPokemon: any;
   public pokebox: any;
   public randomPokemon: any;
+  public initPokemon: any = {
+    name: "",
+    id: 0,
+    sprite: "",
+    type1: "",
+    type2: "",
+    status: true
+  }
   
   constructor(private poketriviaService: PoketriviaService ){
 
@@ -23,12 +31,11 @@ export class AppComponent {
       { 
         this.allPokemon = res.results;
         this.pokebox = this.poketriviaService.pokebox;
-
-        // console.log(this.pokebox);
         
         setTimeout(() => {
           this.randomizePokemon();
-        }, 100);
+          this.randomizeInitPokemon();
+        }, 300);
       }
         
       )
@@ -36,13 +43,16 @@ export class AppComponent {
   }
 
   randomizePokemon(){
-
     let number = Math.floor(Math.random() * this.allPokemon.length);
-
     this.randomPokemon = this.allPokemon[number];
+    this.poketriviaService.actualPokemon = this.randomPokemon;
+  }
 
-    // console.log(this.randomPokemon);
-    
-
+  randomizeInitPokemon(){
+    let number = Math.floor(Math.random() * this.allPokemon.length);
+    this.initPokemon.name = this.allPokemon[number].name;
+    this.initPokemon.id = this.allPokemon[number].dex.id;
+    this.initPokemon.sprite = this.allPokemon[number].dex.sprites.front_default;
+    this.poketriviaService.pokebox.push(this.initPokemon)
   }
 }

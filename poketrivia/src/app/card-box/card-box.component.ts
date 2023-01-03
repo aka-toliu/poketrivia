@@ -28,7 +28,9 @@ export class CardBoxComponent implements OnInit {
 
       // console.log('esquerda');
 
-      event.target.style.transform = "translateX(10px)"
+      // event.target.style.transform = "translateX(10px)"
+
+      event.target.classList.add('left-place');
 
      
         
@@ -44,7 +46,8 @@ export class CardBoxComponent implements OnInit {
     else if (event.offsetX > 100){
       // console.log('direita');
 
-      event.target.style.transform = "translateX(-10px)"
+      event.target.style.transform = "translateX(-10px)";
+      event.target.classList.add('right-place');
 
       if (event.target.nextSibling.tagName == 'DIV') {
         console.log(event.target.nextSibling.id)
@@ -63,6 +66,7 @@ export class CardBoxComponent implements OnInit {
     // console.log(event);
     
 
-    event.target.style.transform = "translateX(0px)"
+    // event.target.style.transform = "translateX(0px)"
+    event.target.classList.remove('left-place');
   }
 }

@@ -18,8 +18,27 @@
         padding: 10px;
         display: flex;
         justify-content: center;
+        align-items: center;
         flex-direction: column;
         user-select: none;
         margin: 10px;
+
+        &__sprite{
+            height: 70%;
+        }
+    }
+}
+
+.left-place{
+    margin-left: 200px!important;
+
+    &::after{
+        content: '';
+        width: 190px;
+        height: 190px;
+        border-radius: 15px;
+        background-color: #70cde433;
+        position: absolute;
+        left: -200px;
     }
 }

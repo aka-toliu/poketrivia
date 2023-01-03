@@ -9,29 +9,17 @@ import { map, tap } from "rxjs/operators";
 export class PoketriviaService {
 
   public pokemon = [];
+  public actualPokemon: any;
 
   public life: number = 3;
 
-  public pokebox = [
-    {
-      name: "bulbasaur",
-      id: 1,
-      type1: "grass",
-      type2: "poison"
-    },
-    {
-      name: "venosaur",
-      id: 2,
-      type1: "grass",
-      type2: "poison"
-    }
+  public pokebox: any = [
+
   ];
 
   private url: string = 'https://pokeapi.co/api/v2/pokemon?limit=151';
 
   constructor(private http: HttpClient) {
-
-    // this.getPokemon()
     
    }
 
