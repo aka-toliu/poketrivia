@@ -10,6 +10,9 @@ import { PoketriviaService } from '../poketrivia.service';
 export class CardBoxComponent implements OnInit {
 
   pokebox: any;
+  pokeIdRight: number = 0;
+  pokeIdLeft: number = 0;
+  
 
   constructor(private poketriviaService: PoketriviaService ) { 
 
@@ -22,15 +25,18 @@ export class CardBoxComponent implements OnInit {
 
   dropCheck(event: any){
 
+    event.preventDefault();
+
     // console.log(event.target.nextSibling);
 
     if (event.offsetX < 100) {
 
       // console.log('esquerda');
 
-      // event.target.style.transform = "translateX(10px)"
+      event.target.style.transform = "translateX(10px)"
 
       event.target.classList.add('left-place');
+      event.target.classList.remove('right-place');
 
      
         
@@ -46,8 +52,10 @@ export class CardBoxComponent implements OnInit {
     else if (event.offsetX > 100){
       // console.log('direita');
 
-      event.target.style.transform = "translateX(-10px)";
       event.target.classList.add('right-place');
+      event.target.classList.remove('left-place');
+
+      event.target.style.transform = "translateX(-10px)"
 
       if (event.target.nextSibling.tagName == 'DIV') {
         console.log(event.target.nextSibling.id)
@@ -66,7 +74,15 @@ export class CardBoxComponent implements OnInit {
     // console.log(event);
     
 
-    // event.target.style.transform = "translateX(0px)"
-    event.target.classList.remove('left-place');
+    event.target.removeAttribute('style')
+    event.target.classList.remove('left-place', 'right-place');
+  }
+
+  checkPokeDrop(event: any){
+    event.preventDefault();
+    event.target.removeAttribute('style')
+    console.log("droped");
+    event.target.classList.remove('left-place', 'right-place');
+    this.poketriviaService.pokebox.push(this.poketriviaService.actualPokemon);
   }
 }

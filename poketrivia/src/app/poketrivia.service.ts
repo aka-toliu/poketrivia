@@ -14,6 +14,10 @@ export class PoketriviaService {
   public life: number = 3;
 
   public pokebox: any = [
+    {
+      name: "bulbasaur",
+      id: 1
+    }
 
   ];
 

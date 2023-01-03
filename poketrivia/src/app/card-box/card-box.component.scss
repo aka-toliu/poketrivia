@@ -8,6 +8,7 @@
     display: flex;
     align-items: center;
     padding: 16px;
+    overflow-x: auto;
 
     .card-drop{
         width: 200px;
@@ -26,10 +27,14 @@
         &__sprite{
             height: 70%;
         }
+
+        &::before{
+            content: '';
+        }
     }
 }
 
-.left-place{
+.left-place:is(.card-drop){
     margin-left: 200px!important;
 
     &::after{
@@ -37,8 +42,23 @@
         width: 190px;
         height: 190px;
         border-radius: 15px;
-        background-color: #70cde433;
+        background-color: #70cde44d;
         position: absolute;
         left: -200px;
+    }
+}
+
+
+.right-place:is(.card-drop){
+    margin-right: 200px!important;
+
+    &::after{
+        content: '';
+        width: 190px;
+        height: 190px;
+        border-radius: 15px;
+        background-color: #70cde44d;
+        position: absolute;
+        right: -200px;
     }
 }

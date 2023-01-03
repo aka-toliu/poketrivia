@@ -1,12 +1,10 @@
 <div class="card-box">
    
-    <div class="card-drop" *ngFor="let pokemon of pokebox" (dragover)="dropCheck($event)" (dragleave)="dragLeave($event)" id="{{ pokemon.id }}">
+    <div class="card-drop" *ngFor="let pokemon of pokebox"  (dragover)="dropCheck($event)" (dragleave)="dragLeave($event)" (drop)="checkPokeDrop($event)" id="{{ pokemon.id }}">
         <p>{{ pokemon.name | titlecase }}</p>
         <h3>#{{ pokemon.id }}</h3>
         <div class="card-drop__sprite">
-            <img src="{{ pokemon.sprite }}" alt="">
+            <img src="{{ pokemon.sprite }}" draggable="false">
         </div>
-        
-
     </div >
 </div>

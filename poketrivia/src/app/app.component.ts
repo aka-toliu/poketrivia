@@ -17,7 +17,9 @@ export class AppComponent {
     sprite: "",
     type1: "",
     type2: "",
-    status: true
+    status: 'actual',
+    result: true
+
   }
   
   constructor(private poketriviaService: PoketriviaService ){
@@ -55,4 +57,6 @@ export class AppComponent {
     this.initPokemon.sprite = this.allPokemon[number].dex.sprites.front_default;
     this.poketriviaService.pokebox.push(this.initPokemon)
   }
+
+
 }
