@@ -11,16 +11,9 @@ export class AppComponent {
   public allPokemon: any;
   public pokebox: any;
   public randomPokemon: any;
-  public initPokemon: any = {
-    name: "",
-    id: 0,
-    sprite: "",
-    type1: "",
-    type2: "",
-    status: 'actual',
-    result: true
+  public initPokemon: any;
 
-  }
+  
   
   constructor(private poketriviaService: PoketriviaService ){
 
@@ -39,7 +32,7 @@ export class AppComponent {
           this.poketriviaService.randomizeInitPokemon();
           this.randomPokemon = this.poketriviaService.randomPokemon;
           this.initPokemon = this.poketriviaService.initPokemon;
-        }, 300);
+        }, 500);
       }
         
       )

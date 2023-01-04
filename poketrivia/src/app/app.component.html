@@ -6,12 +6,12 @@
 
     <app-poke-card *ngIf="randomPokemon !== undefined" [nome]="randomPokemon.name"
       [sprite]="randomPokemon.dex?.sprites.front_default" [tipo1]="randomPokemon.dex?.types[0].type.name"
-      [tipo2]="randomPokemon.dex.types[1] !== undefined ? randomPokemon.dex.types[1].type.name : '' ">
+      [tipo2]="randomPokemon.dex?.types[1] !== undefined ? randomPokemon.dex?.types[1].type.name : '' ">
     </app-poke-card>
 
   </div>
 
-  <app-card-box>
+  <app-card-box *ngIf="randomPokemon !== undefined">
 
   </app-card-box>
 

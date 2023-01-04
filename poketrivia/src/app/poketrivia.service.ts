@@ -37,14 +37,12 @@ export class PoketriviaService {
 
   public life: number = 3;
 
-  public pokebox: any = [
-
-  ];
+  public pokebox: any = [];
 
 
 
 
-  private url: string = 'https://pokeapi.co/api/v2/pokemon?limit=251';
+  private url: string = 'https://pokeapi.co/api/v2/pokemon?limit=151';
 
 
 
@@ -105,10 +103,12 @@ export class PoketriviaService {
       if (a.id > b.id) return 1;
       return 0;
   })
-
-  console.log(this.pokebox);
-  
-
   }
+
+
+
+
+
+
 
 }

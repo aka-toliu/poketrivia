@@ -12,6 +12,7 @@ export class CardBoxComponent implements OnInit {
   pokebox: any;
   pokeIdRight: number = 0;
   pokeIdLeft: number = 0;
+  result: any;
   
 
   constructor(private poketriviaService: PoketriviaService ) { 
@@ -42,7 +43,23 @@ export class CardBoxComponent implements OnInit {
         
 
         if (event.target.previousSibling !== null && event.target.previousSibling.classList.contains('card-drop')) {
-          console.log(event.target.previousSibling.id)
+          // console.log(event.target.previousSibling.id)
+
+          if (event.target.previousSibling.id < this.poketriviaService.randomPokemon.id && event.target.id > this.poketriviaService.randomPokemon.id) {
+            console.log('true');
+
+            this.result = true;
+            
+          }else{
+            console.log('false');
+            this.result = false;
+          }
+        }else if(event.target.previousSibling === null && event.target.id > this.poketriviaService.randomPokemon.id){
+          console.log('true');
+          this.result = true;
+        }else{
+          console.log('false');
+          this.result = false;
         }
       
       
@@ -58,7 +75,23 @@ export class CardBoxComponent implements OnInit {
       event.target.style.transform = "translateX(-10px)"
 
       if (event.target.nextSibling.tagName == 'DIV') {
-        console.log(event.target.nextSibling.id)
+        // console.log(event.target.nextSibling.id)
+
+        if (event.target.nextSibling.id > this.poketriviaService.randomPokemon.id && event.target.id < this.poketriviaService.randomPokemon.id) {
+          console.log('true');
+          this.result = true;
+          
+        }else{
+          console.log('false');
+          this.result = false;
+        }
+      
+      }else if(event.target.nextSibling.tagName !== 'DIV' && event.target.id < this.poketriviaService.randomPokemon.id){
+        console.log('true');
+        this.result = true;
+      }else{
+        console.log('false');
+        this.result = false;
       }
         
       
@@ -81,11 +114,21 @@ export class CardBoxComponent implements OnInit {
   checkPokeDrop(event: any){
     event.preventDefault();
     event.target.removeAttribute('style')
-    console.log("droped");
     event.target.classList.remove('left-place', 'right-place');
-    this.poketriviaService.pokebox.push(this.poketriviaService.randomPokemon);
-    this.poketriviaService.randomizePokemon();
 
+    this.poketriviaService.randomPokemon.result = this.result;
+
+    this.poketriviaService.pokebox.push(this.poketriviaService.randomPokemon);
+
+    this.poketriviaService.randomizePokemon();
     this.poketriviaService.sortPokemon();
+
+    if(this.result === false){
+      this.poketriviaService.life = (this.poketriviaService.life - 1);
+
+      console.log(this.poketriviaService.life);
+      
+
+    }
   }
 }

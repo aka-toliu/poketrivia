@@ -25,14 +25,13 @@
         flex-direction: column;
         user-select: none;
         margin: 10px;
+        transition: all 0.4s;
 
         &__sprite{
             height: 70%;
         }
 
-        &::before{
-            content: '';
-        }
+
     }
 }
 
@@ -44,8 +43,17 @@
         width: 190px;
         height: 190px;
         border-radius: 15px;
-        background-color: #70cde44d;
+        // background-color: #70cde44d;
         position: absolute;
+        left: -200px;
+    }
+
+    &::before{
+        content: '';
+        width: 200px;
+        height: 100%;
+        position: absolute;
+        // background-color: aqua;
         left: -200px;
     }
 }
@@ -59,8 +67,17 @@
         width: 190px;
         height: 190px;
         border-radius: 15px;
-        background-color: #70cde44d;
+        // background-color: #70cde44d;
         position: absolute;
+        right: -200px;
+    }
+
+    &::before{
+        content: '';
+        width: 200px;
+        height: 100%;
+        position: absolute;
+        // background-color: aqua;
         right: -200px;
     }
 }
