@@ -12,6 +12,10 @@ export class AppComponent {
   public pokebox: any;
   public randomPokemon: any;
   public initPokemon: any;
+  public life: number = 3;
+  public points: number = 0;
+
+ 
 
   
   
@@ -28,34 +32,28 @@ export class AppComponent {
         this.pokebox = this.poketriviaService.pokebox;
         
         setTimeout(() => {
-          this.poketriviaService.randomizePokemon();
           this.poketriviaService.randomizeInitPokemon();
+          this.poketriviaService.randomizePokemon();
           this.randomPokemon = this.poketriviaService.randomPokemon;
           this.initPokemon = this.poketriviaService.initPokemon;
-        }, 500);
+        }, 1000);
       }
         
       )
 
       this.poketriviaService.newpokemon$.subscribe( res => {
         this.randomPokemon = res
-       } )
+       })
+
+
+       this.poketriviaService.newlife$.subscribe(res => { 
+        this.life = res
+      })
+
+      this.poketriviaService.newpoints$.subscribe(res => { 
+        this.points = res
+      })
 
   }
-
-  // randomizePokemon(){
-  //   let number = Math.floor(Math.random() * this.allPokemon.length);
-  //   this.randomPokemon = this.allPokemon[number];
-  //   this.poketriviaService.randomPokemon = this.randomPokemon;
-  // }
-
-  // randomizeInitPokemon(){
-  //   let number = Math.floor(Math.random() * this.allPokemon.length);
-  //   this.initPokemon.name = this.allPokemon[number].name;
-  //   this.initPokemon.id = this.allPokemon[number].dex.id;
-  //   this.initPokemon.sprite = this.allPokemon[number].dex.sprites.front_default;
-  //   this.poketriviaService.pokebox.push(this.initPokemon)
-  // }
-
 
 }

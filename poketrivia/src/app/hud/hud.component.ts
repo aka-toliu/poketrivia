@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { PoketriviaService } from '../poketrivia.service';
 
 @Component({
@@ -8,17 +8,28 @@ import { PoketriviaService } from '../poketrivia.service';
 })
 export class HudComponent implements OnInit {
 
-  life: number = 0;
+  // life: number = 0;
+
+  @Input() public life!: any;
+  @Input() public points!: any;
   
 
   constructor(private poketriviaService: PoketriviaService) { 
-    this.life = this.poketriviaService.life;
+    // this.life = this.poketriviaService.life;
 
-    console.log(this.life);
+    // console.log(this.life);
     
   }
 
   ngOnInit(): void {
+
+    this.poketriviaService.newlife$.subscribe(
+      res => 
+    { 
+      // this.life = res
+
+    })
+
   }
 
 }

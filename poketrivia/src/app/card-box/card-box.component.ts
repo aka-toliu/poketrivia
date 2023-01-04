@@ -120,15 +120,25 @@ export class CardBoxComponent implements OnInit {
 
     this.poketriviaService.pokebox.push(this.poketriviaService.randomPokemon);
 
+    this.poketriviaService.pokemon.splice(this.poketriviaService.randomPokemon.index, 1)
+
     this.poketriviaService.randomizePokemon();
     this.poketriviaService.sortPokemon();
+    
 
     if(this.result === false){
-      this.poketriviaService.life = (this.poketriviaService.life - 1);
+
+      
+      this.poketriviaService.setLife();
+
+      
 
       console.log(this.poketriviaService.life);
       
-
+    }else{
+      this.poketriviaService.setPoints();
     }
+
+    // event.target.scrollIntoView();
   }
 }

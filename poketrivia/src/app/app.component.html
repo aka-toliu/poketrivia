@@ -2,7 +2,7 @@
   
   
   <div class="main-top">
-    <app-hud></app-hud>
+    <app-hud [life]="life" [points]="points"></app-hud>
 
     <app-poke-card *ngIf="randomPokemon !== undefined" [nome]="randomPokemon.name"
       [sprite]="randomPokemon.dex?.sprites.front_default" [tipo1]="randomPokemon.dex?.types[0].type.name"

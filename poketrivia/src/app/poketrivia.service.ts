@@ -36,6 +36,13 @@ export class PoketriviaService {
   }
 
   public life: number = 3;
+  private newlife: Subject<number> = new Subject() 
+  public newlife$:Observable<number> = this.newlife.asObservable()
+
+
+  public points: number = 0;
+  private newpoints: Subject<number> = new Subject() 
+  public newpoints$:Observable<number> = this.newpoints.asObservable()
 
   public pokebox: any = [];
 
@@ -86,6 +93,7 @@ export class PoketriviaService {
     this.randomPokemon.name = this.pokemon[number].name;
     this.randomPokemon.id = this.pokemon[number].dex.id;
     this.randomPokemon.sprite = this.pokemon[number].dex.sprites.front_default
+    this.randomPokemon.index = this.pokemon.indexOf(this.pokemon[number]);
   }
 
   randomizeInitPokemon(){
@@ -94,6 +102,10 @@ export class PoketriviaService {
     this.initPokemon.id = this.pokemon[number].dex.id;
     this.initPokemon.sprite = this.pokemon[number].dex.sprites.front_default;
     this.pokebox.push(this.initPokemon)
+    this.initPokemon.index = this.pokemon.indexOf(this.pokemon[number]);
+    this.pokemon.splice(this.initPokemon.index, 1)
+    console.log(this.pokemon);
+    
   }
 
   sortPokemon(){
@@ -105,7 +117,18 @@ export class PoketriviaService {
   })
   }
 
+  setLife(){
+    this.life = (this.life - 1);
+    this.newlife.next(this.life);
+  }
 
+
+  setPoints(){
+    this.points = (this.points + 1);
+    this.newpoints.next(this.points);
+    console.log(this.points);
+    
+  }
 
 
 
