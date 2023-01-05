@@ -1,6 +1,7 @@
 <div class="main">
   
   <div class="start-screen" *ngIf="randomPokemon == undefined">
+    <img src="../assets/SVG/SVG/poketrivia-logo.svg" alt="">
     <h3>Select range:</h3>
     Up to
     <select #range name="select" (change)="pokemonGeneration = range.value; updateLimit()">
@@ -20,8 +21,9 @@
     <app-hud *ngIf="life > 0 && randomPokemon !== undefined" [life]="life" [points]="points"></app-hud>
 
     <div class="result-screen" *ngIf="life == 0">
+      <img src="../assets/SVG/SVG/poketrivia-logo.svg" alt="">
       <h2>🥇 Score: <span>{{ points }}</span></h2> 
-      <button>Restart</button>
+      <button (click)=" refresh()">Restart</button>
       <button 
       [style.backgroundColor]="buttonAction ? '#748c95' : 'dimgray'"
       (click)="shareResults(); buttonAction = true ">

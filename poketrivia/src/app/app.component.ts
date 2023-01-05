@@ -63,7 +63,7 @@ export class AppComponent {
 
 
   shareResults(){
-    let result = "🔢 https://poketrivia.vercel.app/ | 🥇 My score: " + this.points + " | 🏆 Best score: "
+    let result = "🔢 https://poke-trivia.vercel.app | 🥇 My score: " + this.points + " | 🏆 Best score: "
 
     navigator.clipboard.writeText(result);
   }
@@ -80,5 +80,9 @@ export class AppComponent {
     this.poketriviaService.limit = this.pokemonGeneration;
     this.poketriviaService.url = 'https://pokeapi.co/api/v2/pokemon?limit=' + this.pokemonGeneration
   }
+
+  refresh(): void {
+    window.location.reload();
+}
 
 }

@@ -29,6 +29,11 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    box-shadow: -6px 21px 21px rgba(0, 0, 0, 0.13);
+
+    img{
+        width: 200px;
+    }
 
     h2{
 
@@ -58,6 +63,11 @@
     height: 60vh;
     background-color: white;
     border-radius: 15px;
+    box-shadow: -6px 21px 21px rgba(0, 0, 0, 0.13);
+
+    img{
+        width: 250px;
+    }
     
 
     select{
