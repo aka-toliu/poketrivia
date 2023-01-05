@@ -47,9 +47,11 @@ export class PoketriviaService {
   public pokebox: any = [];
 
 
+  public limit: string = "151";
 
 
-  private url: string = 'https://pokeapi.co/api/v2/pokemon?limit=151';
+
+  public url: string = 'https://pokeapi.co/api/v2/pokemon?limit=151';
 
 
 
@@ -104,7 +106,7 @@ export class PoketriviaService {
     this.pokebox.push(this.initPokemon)
     this.initPokemon.index = this.pokemon.indexOf(this.pokemon[number]);
     this.pokemon.splice(this.initPokemon.index, 1)
-    console.log(this.pokemon);
+    // console.log(this.pokemon);
     
   }
 
@@ -126,7 +128,7 @@ export class PoketriviaService {
   setPoints(){
     this.points = (this.points + 1);
     this.newpoints.next(this.points);
-    console.log(this.points);
+    // console.log(this.points);
     
   }
 

@@ -1,14 +1,33 @@
 <div class="main">
   
+  <div class="start-screen" *ngIf="randomPokemon == undefined">
+    <h3>Select range:</h3>
+    Up to
+    <select #range name="select" (change)="pokemonGeneration = range.value; updateLimit()">
+        <option selected value="151">1st generation</option>
+        <option value="251" >2nd generation</option>
+        <option value="386">3rd generation</option>
+    </select>
+
+    <button (click)="start(); started = true">
+      <span *ngIf="!started">Start</span>
+      <span *ngIf="started">Loading...</span>
+    </button>
+
+</div>
   
-  
-  <div class="main-top">
+  <div class="main-top" *ngIf="randomPokemon !== undefined" >
     <app-hud *ngIf="life > 0 && randomPokemon !== undefined" [life]="life" [points]="points"></app-hud>
 
     <div class="result-screen" *ngIf="life == 0">
-      <h2>Pontuação: <span>{{ points }}</span></h2> 
-      <button>Try again</button>
-      <button>Share</button>
+      <h2>🥇 Score: <span>{{ points }}</span></h2> 
+      <button>Restart</button>
+      <button 
+      [style.backgroundColor]="buttonAction ? '#748c95' : 'dimgray'"
+      (click)="shareResults(); buttonAction = true ">
+        <span *ngIf="!buttonAction">Share</span>
+        <span *ngIf="buttonAction">Copied!</span>
+      </button>
     </div>
 
 
@@ -19,8 +38,6 @@
 
   </div>
 
-  <app-card-box *ngIf="randomPokemon !== undefined">
-
-  </app-card-box>
+  <app-card-box *ngIf="randomPokemon !== undefined"></app-card-box>
 
 </div>
