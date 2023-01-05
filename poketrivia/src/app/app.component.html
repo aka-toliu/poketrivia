@@ -22,7 +22,8 @@
 
     <div class="result-screen" *ngIf="life == 0">
       <img src="../assets/poketrivia-logo.svg" alt="">
-      <h2>🥇 Score: <span>{{ points }}</span></h2> 
+      <h3>🥇 Score: <span>{{ points }}</span></h3> 
+      <h3>🏆 Highscore: <span>{{ highscore }}</span></h3> 
       <button (click)=" refresh()">Restart</button>
       <button 
       [style.backgroundColor]="buttonAction ? '#748c95' : 'dimgray'"

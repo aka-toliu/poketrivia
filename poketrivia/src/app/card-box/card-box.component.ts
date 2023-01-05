@@ -82,7 +82,7 @@ export class CardBoxComponent implements OnInit {
           this.result = true;
           
         }else{
-          console.log('false');
+          // console.log('false');
           this.result = false;
         }
       
@@ -140,5 +140,12 @@ export class CardBoxComponent implements OnInit {
     }
 
     // event.target.scrollIntoView();
+
+    if (this.poketriviaService.life == 0) {
+      this.poketriviaService.setHightScore();
+      
+    }
   }
+
+
 }

@@ -9,6 +9,9 @@ import { map, tap } from "rxjs/operators";
 export class PoketriviaService {
 
   public pokemon: any = [];
+  public highscore: any;
+  private newhighscore: Subject<any> = new Subject() 
+  public newhighscore$:Observable<any> = this.newhighscore.asObservable()
 
   private newpokemon: Subject<any> = new Subject() 
   public newpokemon$:Observable<any> = this.newpokemon.asObservable()
@@ -131,6 +134,23 @@ export class PoketriviaService {
     // console.log(this.points);
     
   }
+
+  setHightScore(){
+    
+
+    if (this.points > this.highscore && this.highscore !== null) {
+      this.highscore = this.points;
+    }
+
+    localStorage.setItem('highscore', this.highscore);
+    this.newhighscore.next(this.highscore)
+
+    console.log(this.highscore);
+    
+    
+  }
+
+
 
 
 
