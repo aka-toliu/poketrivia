@@ -63,7 +63,7 @@ export class AppComponent {
 
 
   shareResults(){
-    let result = "🔢 https://github.com/byToliu/poketrivia | 🥇 My score: " + this.points + " | 🏆 Best score: "
+    let result = "🔢 https://poketrivia.vercel.app/ | 🥇 My score: " + this.points + " | 🏆 Best score: "
 
     navigator.clipboard.writeText(result);
   }
