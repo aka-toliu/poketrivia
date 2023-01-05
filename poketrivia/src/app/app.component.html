@@ -1,10 +1,18 @@
 <div class="main">
   
   
+  
   <div class="main-top">
-    <app-hud [life]="life" [points]="points"></app-hud>
+    <app-hud *ngIf="life > 0 && randomPokemon !== undefined" [life]="life" [points]="points"></app-hud>
 
-    <app-poke-card *ngIf="randomPokemon !== undefined" [nome]="randomPokemon.name"
+    <div class="result-screen" *ngIf="life == 0">
+      <h2>Pontuação: <span>{{ points }}</span></h2> 
+      <button>Try again</button>
+      <button>Share</button>
+    </div>
+
+
+    <app-poke-card *ngIf="randomPokemon !== undefined && life > 0" [nome]="randomPokemon.name"
       [sprite]="randomPokemon.dex?.sprites.front_default" [tipo1]="randomPokemon.dex?.types[0].type.name"
       [tipo2]="randomPokemon.dex?.types[1] !== undefined ? randomPokemon.dex?.types[1].type.name : '' ">
     </app-poke-card>

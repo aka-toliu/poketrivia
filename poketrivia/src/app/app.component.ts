@@ -24,36 +24,39 @@ export class AppComponent {
   }
 
   ngOnInit(): void{
-      this.poketriviaService.getAllPokemon.subscribe(
-        res => 
+      this.initPoketrivia();
+  }
 
-      { 
-        this.poketriviaService.pokemon = res.results;
-        this.pokebox = this.poketriviaService.pokebox;
-        
-        setTimeout(() => {
-          this.poketriviaService.randomizeInitPokemon();
-          this.poketriviaService.randomizePokemon();
-          this.randomPokemon = this.poketriviaService.randomPokemon;
-          this.initPokemon = this.poketriviaService.initPokemon;
-        }, 1000);
-      }
-        
-      )
+  initPoketrivia(){
+    this.poketriviaService.getAllPokemon.subscribe(
+      res => 
 
-      this.poketriviaService.newpokemon$.subscribe( res => {
-        this.randomPokemon = res
-       })
+    { 
+      this.poketriviaService.pokemon = res.results;
+      this.pokebox = this.poketriviaService.pokebox;
+      
+      setTimeout(() => {
+        this.poketriviaService.randomizeInitPokemon();
+        this.poketriviaService.randomizePokemon();
+        this.randomPokemon = this.poketriviaService.randomPokemon;
+        this.initPokemon = this.poketriviaService.initPokemon;
+      }, 1000);
+    }
+      
+    )
+
+    this.poketriviaService.newpokemon$.subscribe( res => {
+      this.randomPokemon = res
+     })
 
 
-       this.poketriviaService.newlife$.subscribe(res => { 
-        this.life = res
-      })
+     this.poketriviaService.newlife$.subscribe(res => { 
+      this.life = res
+    })
 
-      this.poketriviaService.newpoints$.subscribe(res => { 
-        this.points = res
-      })
-
+    this.poketriviaService.newpoints$.subscribe(res => { 
+      this.points = res
+    })
   }
 
 }
