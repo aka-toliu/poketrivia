@@ -20,6 +20,7 @@ export class AppComponent {
   public highscore: any;
   public timeout: any = 500;
   public finished: boolean = false;
+  public help: boolean = false;
  
 
   

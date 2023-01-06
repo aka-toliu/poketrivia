@@ -16,6 +16,22 @@
         top: 0;
         position: absolute;
     }
+
+    @media (max-width: 600px) {
+        &::after{
+            content: 'Oh, it does not work on mobile yet. but I am working on it :)';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: dimgray;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
     
 }
 
@@ -23,17 +39,18 @@
 
     background-color: white;
     width: 300px;
-    height: 300px;
+    height: 350px;
     border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     box-shadow: -6px 21px 21px rgba(0, 0, 0, 0.13);
+    position: relative;
 
     img{
         width: 200px;
-        margin-bottom: 8px;
+        margin-bottom: 24px;
     }
 
 
@@ -48,6 +65,7 @@
         font-size: 1em;
         margin-top: 20px;
         cursor: pointer;
+        border: none;
     }
 
     &__score{
@@ -64,16 +82,22 @@
         }
 
     }
+
+    p{
+        position: absolute;
+        bottom: 16px;
+    }
 }
 
 
 
 .start-screen{
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-width: 30vw;
+    min-width: 50vh;
     height: 60vh;
     background-color: white;
     border-radius: 15px;
@@ -84,7 +108,7 @@
     }
 
     img{
-        width: 250px;
+        width: 32vh;
         margin-bottom: 36px;
     }
     
@@ -110,6 +134,61 @@
         font-size: 1em;
         margin-top: 20px;
         cursor: pointer;
+        border: none;
     }
 
+    .btn-info{
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        border-radius: 30px;
+        top: -12px;
+        right: 8px;
+        border: 2px solid dimgray;
+        background-color: transparent;
+        color: dimgray;
+        font-size: 1.1em;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        
+    }
+
+    dialog{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 16px;
+    }
+
+    // p{
+    //     position: absolute;
+    //     bottom: 16px;
+    // }
+
+    .social-info{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: absolute;
+            bottom: 16px;
+
+            span{
+                font-weight: 600;
+            }
+    }
+
+}
+
+footer{
+    position: absolute;
+    bottom: 8px;
+    display: flex;
 }

@@ -1,11 +1,21 @@
 <div class="main">
 
+  
     
   
-  <div class="start-screen" *ngIf="randomPokemon == undefined && pokebox == undefined">
+  <div class="start-screen" *ngIf="randomPokemon == undefined && finished == false">
     <img src="../assets/poketrivia-logo.svg" alt="">
+
+    <dialog *ngIf="help">
+      <h4>Drag the pokemon cards to place them in the correct pokedex order.</h4>
+    </dialog>
+    <button class="btn-info" (click)="help = !help">
+      <p *ngIf="!help">?</p>
+      <p *ngIf="help">x</p>
+    </button>
+
     <h3>Select range:</h3>
-    Up to
+    Pokémon Up to
     <select #range name="select" (change)="pokemonGeneration = range.value; updateLimit()">
         <option selected value="151">1st generation</option>
         <option value="251" >2nd generation</option>
@@ -22,6 +32,12 @@
       <span *ngIf="!started">Start</span>
       <span *ngIf="started">Loading...</span>
     </button>
+
+    <div class="social-info">
+      <p>Check the project on <a href="https://github.com/byToliu/poketrivia">GitHub</a> :)</p>
+      <span>v.1.0</span>
+    </div>
+    
 </div>
   
   <div class="main-top" *ngIf="randomPokemon !== undefined || finished" >
@@ -37,11 +53,16 @@
 
       <button (click)=" refresh()">Restart</button>
       <button 
-      [style.backgroundColor]="buttonAction ? '#748c95' : 'dimgray'"
+      [style.backgroundColor]="buttonAction ? '#748c95' : 'transparent'"
+      [style.color]="buttonAction ? 'white' : '#748c95'"
+      [style.border]="buttonAction ? 'none' : '2px solid #748c95'"
       (click)="shareResults(); buttonAction = true ">
         <span *ngIf="!buttonAction">Share</span>
         <span *ngIf="buttonAction">Copied!</span>
       </button>
+
+      <p>Check the project on <a href="https://github.com/byToliu/poketrivia">GitHub</a> :)</p>
+
     </div>
 
 
@@ -54,4 +75,12 @@
 
   <app-card-box *ngIf="randomPokemon !== undefined  && pokebox !== undefined || finished"  ></app-card-box>
 
+  <footer *ngIf="randomPokemon == undefined">
+    <p>All data sourced from <a href="https://pokeapi.co/">PokéAPI.</a> Pokémon and Pokémon character names are trademarks of Nintendo®/Game Freak Inc.®.</p>
+    <p></p>
+  </footer>
+
 </div>
+
+
+
