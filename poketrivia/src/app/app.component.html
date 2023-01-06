@@ -1,6 +1,8 @@
 <div class="main">
+
+    
   
-  <div class="start-screen" *ngIf="randomPokemon == undefined">
+  <div class="start-screen" *ngIf="randomPokemon == undefined && pokebox == undefined">
     <img src="../assets/poketrivia-logo.svg" alt="">
     <h3>Select range:</h3>
     Up to
@@ -8,22 +10,31 @@
         <option selected value="151">1st generation</option>
         <option value="251" >2nd generation</option>
         <option value="386">3rd generation</option>
+        <option value="493">4th generation</option>
+        <option value="649" >5th generation</option>
+        <option value="721">6th generation</option>
+        <option value="809">7th generation</option>
+        <option value="905" >8th generation</option>
+        <option value="1008">9th generation</option>
     </select>
 
     <button (click)="start(); started = true">
       <span *ngIf="!started">Start</span>
       <span *ngIf="started">Loading...</span>
     </button>
-
 </div>
   
-  <div class="main-top" *ngIf="randomPokemon !== undefined" >
+  <div class="main-top" *ngIf="randomPokemon !== undefined || finished" >
     <app-hud *ngIf="life > 0 && randomPokemon !== undefined" [life]="life" [points]="points"></app-hud>
 
-    <div class="result-screen" *ngIf="life == 0">
+    <div class="result-screen" *ngIf="life == 0 || finished">
       <img src="../assets/poketrivia-logo.svg" alt="">
-      <h3>🥇 Score: <span>{{ points }}</span></h3> 
-      <h3>🏆 Highscore: <span>{{ highscore }}</span></h3> 
+      <div class="result-screen__score">
+        <h4 *ngIf="finished">😱 OMG! You did it! 🥳🥳🥳</h4>
+        <h4>🥇 Score: <span>{{ points }}</span></h4> 
+        <h4>🏆 Highscore: <span>{{ highscore }}</span></h4> 
+      </div>
+
       <button (click)=" refresh()">Restart</button>
       <button 
       [style.backgroundColor]="buttonAction ? '#748c95' : 'dimgray'"
@@ -41,6 +52,6 @@
 
   </div>
 
-  <app-card-box *ngIf="randomPokemon !== undefined"></app-card-box>
+  <app-card-box *ngIf="randomPokemon !== undefined  && pokebox !== undefined || finished"  ></app-card-box>
 
 </div>

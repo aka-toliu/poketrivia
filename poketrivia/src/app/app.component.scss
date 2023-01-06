@@ -36,9 +36,7 @@
         margin-bottom: 8px;
     }
 
-    h2{
 
-    }
 
     button{
         width: 100px;
@@ -50,6 +48,21 @@
         font-size: 1em;
         margin-top: 20px;
         cursor: pointer;
+    }
+
+    &__score{
+        display: flex;
+        flex-direction: column;
+
+        h4{
+            margin: 4px;
+            font-weight: 700;
+
+            span{
+                font-weight: 600;
+            }
+        }
+
     }
 }
 
@@ -66,9 +79,13 @@
     border-radius: 15px;
     box-shadow: -6px 21px 21px rgba(0, 0, 0, 0.13);
 
+    @media (max-width: 600px) {
+        min-width: 90vw;
+    }
+
     img{
         width: 250px;
-        margin-bottom: 8px;
+        margin-bottom: 36px;
     }
     
 

@@ -12,6 +12,16 @@
     overflow-y: hidden;
     // transition: all 0.6s;
 
+    // &::-webkit-scrollbar {
+    //    position: absolute;
+    //    bottom: 0;
+    //    background-color: rgb(73, 77, 134);
+    //   }
+
+    //   &::-webkit-scrollbar-thumb {
+    //     background-color: rgb(116, 120, 182);
+    //   }
+
     .card-drop{
         min-width: 200px;
         height: 200px;
@@ -31,6 +41,29 @@
             height: 70%;
         }
 
+        &:last-child{
+            position: relative;
+                &::after{
+                    content: '';
+                    width: 200px;
+                    height: 200px;
+                    // background-color: #e470704d;
+                    position: absolute;
+                    right: -200px;
+                }
+        }
+
+        &:nth-child(1){
+            position: relative;
+                &::before{
+                    content: '';
+                    width: 250px;
+                    height: 200px;
+                    // background-color: #e470704d;
+                    position: absolute;
+                    left: -250px;
+                }
+        }
 
     }
 }
@@ -40,8 +73,8 @@
 
     &::after{
         content: '';
-        width: 190px;
-        height: 190px;
+        width: 200px;
+        height: 200px;
         border-radius: 15px;
         // background-color: #70cde44d;
         position: absolute;
@@ -64,8 +97,8 @@
 
     &::after{
         content: '';
-        width: 190px;
-        height: 190px;
+        width: 200px;
+        height: 200px;
         border-radius: 15px;
         // background-color: #70cde44d;
         position: absolute;
@@ -88,5 +121,5 @@
 
 
 .errado{
-    border: 5px solid rgb(143, 39, 39);
+    border: 5px solid #be2222;
 }

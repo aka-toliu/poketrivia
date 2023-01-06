@@ -16,6 +16,11 @@ export class PoketriviaService {
   private newpokemon: Subject<any> = new Subject() 
   public newpokemon$:Observable<any> = this.newpokemon.asObservable()
 
+  public finished: boolean = false;
+  private newfinished: Subject<any> = new Subject() 
+  public newfinished$:Observable<any> = this.newfinished.asObservable()
+
+
 
   public randomPokemon: any = {
     name: "",
@@ -89,7 +94,18 @@ export class PoketriviaService {
   }
 
   randomizePokemon(){
-    let number = Math.floor(Math.random() * this.pokemon.length);
+
+    console.log(this.pokemon);
+
+        
+    if (this.pokemon.length == 0) {
+      this.finished = true;
+      this.newfinished.next(this.finished)
+      console.log(this.finished);
+    }
+
+    if (this.pokemon.length > 1) {
+      let number = Math.floor(Math.random() * this.pokemon.length);
     let randomPokemon = this.pokemon[number];
     this.randomPokemon = randomPokemon;   
 
@@ -99,6 +115,19 @@ export class PoketriviaService {
     this.randomPokemon.id = this.pokemon[number].dex.id;
     this.randomPokemon.sprite = this.pokemon[number].dex.sprites.front_default
     this.randomPokemon.index = this.pokemon.indexOf(this.pokemon[number]);
+    }else{
+      let number = 0;
+    let randomPokemon = this.pokemon[number];
+    this.randomPokemon = randomPokemon;   
+
+    this.newpokemon.next(randomPokemon)
+
+    this.randomPokemon.name = this.pokemon[number].name;
+    this.randomPokemon.id = this.pokemon[number].dex.id;
+    this.randomPokemon.sprite = this.pokemon[number].dex.sprites.front_default
+    this.randomPokemon.index = this.pokemon.indexOf(this.pokemon[number]);
+    }
+  
   }
 
   randomizeInitPokemon(){

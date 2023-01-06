@@ -18,6 +18,8 @@ export class AppComponent {
   public pokemonGeneration: string = "151";
   public started: boolean = false;
   public highscore: any;
+  public timeout: any = 500;
+  public finished: boolean = false;
  
 
   
@@ -52,7 +54,7 @@ export class AppComponent {
         this.poketriviaService.randomizePokemon();
         this.randomPokemon = this.poketriviaService.randomPokemon;
         this.initPokemon = this.poketriviaService.initPokemon;
-      }, 1200);
+      }, this.timeout);
     }
       
     )
@@ -73,11 +75,15 @@ export class AppComponent {
     this.poketriviaService.newhighscore$.subscribe(res => { 
       this.highscore = res
     })
+
+    this.poketriviaService.newfinished$.subscribe(res => { 
+      this.finished = res
+    })
   }
 
 
   shareResults(){
-    let result = "🔢 https://poke-trivia.vercel.app | 🥇 My score: " + this.points + " | 🏆 Best score: " + + this.highscore;
+    let result = "⭕ https://poke-trivia.vercel.app | 🥇 My score: " + this.points + " | 🏆 Highscore: " + + this.highscore;
 
     navigator.clipboard.writeText(result);
   }
@@ -92,7 +98,44 @@ export class AppComponent {
 
   updateLimit(){
     this.poketriviaService.limit = this.pokemonGeneration;
-    this.poketriviaService.url = 'https://pokeapi.co/api/v2/pokemon?limit=' + this.pokemonGeneration
+    this.poketriviaService.url = 'https://pokeapi.co/api/v2/pokemon?limit=' + this.pokemonGeneration;
+
+    if (this.poketriviaService.limit === '151')
+    {
+      this.timeout = 400;
+    }
+    else if (this.poketriviaService.limit === '251')
+    {
+      this.timeout = 800;
+    }
+    else if (this.poketriviaService.limit === '386')
+    {
+      this.timeout = 1200;
+    }
+    else if (this.poketriviaService.limit === '493')
+    {
+      this.timeout = 1600;
+    }
+    else if (this.poketriviaService.limit === '649')
+    {
+      this.timeout = 2000;
+    }
+    else if (this.poketriviaService.limit === '721')
+    {
+      this.timeout = 2400;
+    }
+    else if (this.poketriviaService.limit === '809')
+    {
+      this.timeout = 2800;
+    }
+    else if (this.poketriviaService.limit === '905')
+    {
+      this.timeout = 3200;
+    }
+    else if (this.poketriviaService.limit === '1008')
+    {
+      this.timeout = 3600;
+    }
   }
 
   refresh(): void {

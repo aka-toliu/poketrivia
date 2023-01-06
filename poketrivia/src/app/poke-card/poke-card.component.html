@@ -1,10 +1,10 @@
-<div class="poke-card" draggable="true" (dragstart)="carddrag();">
+<div class="poke-card" draggable="true" (dragstart)="carddrag($event)" (dragend)="dragend($event)">
 <h3> {{ nome | titlecase  }}</h3>
 
 
 <div class="poke-card__tipos">
-    <span class="{{ tipo1 }}"> {{ tipo1 }} </span>
-    <span class="{{ tipo2 }}"> {{ tipo2 }} </span>
+    <span class="{{ tipo1 }}"> {{ tipo1 | titlecase }} </span>
+    <span class="{{ tipo2 }}"> {{ tipo2 | titlecase }} </span>
 </div>
 
 <div class="poke-card__sprite">
