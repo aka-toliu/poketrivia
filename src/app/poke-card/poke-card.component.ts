@@ -130,7 +130,7 @@ export class PokeCardComponent implements OnInit {
           // console.log(dropCollider.left);
           // console.log(pontos_card[i].x);
 
-          if (pontos_card[i].x < (cardCollider.width + dropCollider.left / 3) && pontos_drop[i].y >= cardCollider.top && pontos_drop[i].y <= cardCollider.top + cardCollider.height) {
+          if (pontos_card[i].x < (cardCollider.width + dropCollider.left / 2) && pontos_drop[i].y >= cardCollider.top && pontos_drop[i].y <= cardCollider.top + cardCollider.height) {
 
 
 
@@ -203,7 +203,7 @@ export class PokeCardComponent implements OnInit {
 
           }
 
-          if (pontos_card[i].x > (cardCollider.width + dropCollider.left / 3) && pontos_drop[i].y >= cardCollider.top && pontos_drop[i].y <= cardCollider.top + cardCollider.height) {
+          if (pontos_card[i].x > (cardCollider.width + dropCollider.left / 2) && pontos_drop[i].y >= cardCollider.top && pontos_drop[i].y <= cardCollider.top + cardCollider.height) {
             console.log('direita');
 
 
