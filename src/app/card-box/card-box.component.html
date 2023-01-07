@@ -4,6 +4,7 @@
     (dragover)="dropCheck($event)" 
     (dragleave)="dragLeave($event)" 
     (drop)="checkPokeDrop($event)" 
+    (touchstart)="touch($event)"
     id="{{ pokemon.id }}" 
     [ngClass]="{
         'certo': pokemon.result == true,
@@ -14,5 +15,12 @@
         <div class="card-drop__sprite">
             <img src="{{ pokemon.sprite }}" draggable="false">
         </div>
+
+
+        <div class="btns-touch">
+            <button class="btn-touch L" (touchstart)="touchValidade($event)"></button>
+            <button class="btn-touch R" (touchstart)="touchValidade($event)"></button>
+        </div>
+
     </div >
 </div>

@@ -13,6 +13,7 @@ export class CardBoxComponent implements OnInit {
   pokeIdRight: number = 0;
   pokeIdLeft: number = 0;
   result: any;
+  // btnTouch: boolean = false;
   
 
   constructor(private poketriviaService: PoketriviaService ) { 
@@ -152,6 +153,155 @@ export class CardBoxComponent implements OnInit {
 
 
     
+  }
+
+
+
+  touch(event: any){
+    
+
+    let drops = document.querySelectorAll('.card-drop');
+
+    for (let i = 0; i < drops.length; i++) {
+      if(drops[i] !== event.target){
+        drops[i].classList.remove('btn--actived');
+      }
+    }
+
+    if(event.target.classList.contains('card-drop')){
+      event.target.classList.toggle('btn--actived');
+    }
+
+    event.target.addEventListener("touchmove", ()=>{
+      for (let i = 0; i < drops.length; i++) {
+       
+          drops[i].classList.remove('btn--actived');
+        
+      }
+    });
+
+
+    
+  }
+
+
+  touchValidade(event: any){
+    let card = event.target.parentNode.parentNode;
+
+    if(event.target.classList.contains('L')){
+
+
+      if(card.previousSibling !== null && card.previousSibling.classList.contains('card-drop')){
+        if (card.previousSibling.id < this.poketriviaService.randomPokemon.id && card.id > this.poketriviaService.randomPokemon.id) {
+          console.log('true');
+
+          this.result = true;
+          
+        }else{
+          console.log('false');
+          this.result = false;
+        }
+      }
+      else if(card.previousSibling === null && card.id > this.poketriviaService.randomPokemon.id){
+        console.log('true');
+        this.result = true;
+      }else{
+        console.log('false');
+        this.result = false;
+      }
+
+      this.poketriviaService.randomPokemon.result = this.result;
+
+    this.poketriviaService.pokebox.push(this.poketriviaService.randomPokemon);
+
+    this.poketriviaService.pokemon.splice(this.poketriviaService.randomPokemon.index, 1);
+
+    let box = event.target.parentNode;
+
+    this.poketriviaService.randomizePokemon();
+    this.poketriviaService.sortPokemon();
+    
+
+    if(this.result === false){
+
+      // tira pontos de vida
+      this.poketriviaService.setLife();
+
+      
+
+      // console.log(this.poketriviaService.life);
+      
+    }else{
+      this.poketriviaService.setPoints();
+    }
+
+    // event.target.scrollIntoView();
+
+    if (this.poketriviaService.life == 0) {
+      this.poketriviaService.setHightScore();
+      
+    }
+
+
+      
+    }
+
+    if(event.target.classList.contains('R')){
+      if (card.nextSibling.tagName == 'DIV') {
+        // console.log(card.nextSibling.id)
+
+        if (card.nextSibling.id > this.poketriviaService.randomPokemon.id && card.id < this.poketriviaService.randomPokemon.id) {
+          console.log('true');
+          this.result = true;
+          
+        }else{
+          console.log('false');
+          this.result = false;
+        }
+      
+      }
+      else if(card.nextSibling.tagName !== 'DIV' && card.id < this.poketriviaService.randomPokemon.id){
+        console.log('true');
+        this.result = true;
+      }else{
+        console.log('false');
+        this.result = false;
+      }
+
+      this.poketriviaService.randomPokemon.result = this.result;
+
+    this.poketriviaService.pokebox.push(this.poketriviaService.randomPokemon);
+
+    this.poketriviaService.pokemon.splice(this.poketriviaService.randomPokemon.index, 1);
+
+    let box = event.target.parentNode;
+
+    this.poketriviaService.randomizePokemon();
+    this.poketriviaService.sortPokemon();
+    
+
+    if(this.result === false){
+
+      // tira pontos de vida
+      this.poketriviaService.setLife();
+
+      
+
+      // console.log(this.poketriviaService.life);
+      
+    }else{
+      this.poketriviaService.setPoints();
+    }
+
+    // event.target.scrollIntoView();
+
+    if (this.poketriviaService.life == 0) {
+      this.poketriviaService.setHightScore();
+      
+    }
+
+    }
+
   }
 
 
