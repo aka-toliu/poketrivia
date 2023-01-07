@@ -7,6 +7,9 @@
     align-items: center;
     flex-direction: column;
     overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
 
     &-top{
         height: 60%;
@@ -16,6 +19,7 @@
         align-items: center;
         top: 0;
         position: absolute;
+
     }
 
     // @media (max-width: 600px) {
@@ -193,3 +197,5 @@ footer{
     bottom: 8px;
     display: flex;
 }
+
+
