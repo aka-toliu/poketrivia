@@ -198,6 +198,11 @@ footer{
     position: absolute;
     bottom: 8px;
     display: flex;
+
+    @media (max-width: 600px) {
+        font-size: 0.8em;
+    padding: 15px;
+    }
 }
 
 
