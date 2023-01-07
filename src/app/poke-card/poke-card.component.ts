@@ -49,6 +49,9 @@ export class PokeCardComponent implements OnInit {
       cardsDrop[i].classList.remove('left-place', 'right-place');
     }
 
+    console.log('end');
+    
+
   }
 
 
@@ -117,19 +120,26 @@ export class PokeCardComponent implements OnInit {
                       // console.log(dropCollider.left);
                       // console.log(pontos_card[i].x);
 
-                      if(pontos_card[i].x < (cardCollider.width + dropCollider.left / 2)){
+                      if(pontos_card[i].x < (cardCollider.width + dropCollider.left / 2) && pontos_drop[i].y >= cardCollider.top){
                           console.log('esquerda');
                           element.classList.add('left-place');
                           element.classList.remove('right-place');
-                          
+
+                          // card.addEventListener("touchend", () =>{
+                          //   console.log('dropou');
+                            
+                          //  });
+
                       }
 
-                      if(pontos_card[i].x > (cardCollider.width + dropCollider.left / 2)){
+                      if(pontos_card[i].x > (cardCollider.width + dropCollider.left / 2) && pontos_drop[i].y >= cardCollider.top){
                         console.log('direita');
                         element.classList.add('right-place');
                         element.classList.remove('left-place');
                         
                     }
+
+
                             
   
               }
