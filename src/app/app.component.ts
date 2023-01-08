@@ -85,9 +85,14 @@ export class AppComponent {
 
 
   shareResults(){
-    let result = "⭕ #Poketrivia -> https://poke-trivia.vercel.app | 🥇 My score: " + this.points + " | 🏆 Highscore: " + + this.highscore;
+    let result = "⭕ https://poke-trivia.vercel.app | 🥇 My score: " + this.points + " 🏆 Highscore: " + + this.highscore+ " | #Poketrivia";
 
     navigator.clipboard.writeText(result);
+
+
+    setTimeout(() => {
+      this.buttonAction = false;
+    }, 2500);
   }
 
     start(){
