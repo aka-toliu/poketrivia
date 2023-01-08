@@ -21,6 +21,7 @@ export class AppComponent {
   public timeout: any = 500;
   public finished: boolean = false;
   public help: boolean = false;
+  public loading: boolean = false;
  
 
   
@@ -84,7 +85,7 @@ export class AppComponent {
 
 
   shareResults(){
-    let result = "⭕ https://poke-trivia.vercel.app | 🥇 My score: " + this.points + " | 🏆 Highscore: " + + this.highscore;
+    let result = "⭕ #Poketrivia -> https://poke-trivia.vercel.app | 🥇 My score: " + this.points + " | 🏆 Highscore: " + + this.highscore;
 
     navigator.clipboard.writeText(result);
   }
@@ -133,14 +134,54 @@ export class AppComponent {
     {
       this.timeout = 3200;
     }
-    else if (this.poketriviaService.limit === '1008')
+    else if (this.poketriviaService.limit === '1000')
     {
       this.timeout = 3600;
     }
   }
 
   refresh(): void {
-    window.location.reload();
+    // window.location.reload();
+    this.poketriviaService.pokemon = [];
+    this.poketriviaService.pokebox = [];
+    this.poketriviaService.randomPokemon = {};
+    this.randomPokemon = {};
+    this.allPokemon = undefined;
+    this.pokebox = undefined;
+    this.poketriviaService.life = 3;
+    this.poketriviaService.points = 0;
+    this.life = 3;
+    this.points = 0;
+    this.finished = false;
+    this.loading = true;
+
+
+    
+    this.poketriviaService.getAllPokemon.subscribe(
+      res => 
+
+    { 
+      this.poketriviaService.pokemon = res.results;
+      this.pokebox = this.poketriviaService.pokebox;
+      
+      setTimeout(() => {
+        this.poketriviaService.randomizeInitPokemon();
+        this.poketriviaService.randomizePokemon();
+        this.randomPokemon = this.poketriviaService.randomPokemon;
+        this.initPokemon = this.poketriviaService.initPokemon;
+
+        this.loading = false;
+
+
+        
+      }, this.timeout);
+    }
+      
+    )
+
+    
+
+
 }
 
 }

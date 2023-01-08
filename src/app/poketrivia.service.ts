@@ -95,7 +95,7 @@ export class PoketriviaService {
 
   randomizePokemon(){
 
-    console.log(this.pokemon);
+    // console.log(this.pokemon);
 
         
     if (this.pokemon.length == 0) {

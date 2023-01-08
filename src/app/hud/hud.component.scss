@@ -8,6 +8,8 @@ nav{
     align-items: center;
     justify-content: center;
     padding: 5px;
+    // background-color: #be2222;
+
 
     @media (max-width: 600px) {
         position: fixed;
@@ -23,12 +25,20 @@ nav{
     }
 }
 
+.hearts{
+    background-color: #cfcfcf;
+    padding: 2px 10px;
+    border-radius: 7px;
+    margin: 5px 0px;
+}
+
 .heart{
 
     @mixin heart{
         height: 30px;
         background-image: url(../../assets/heart.svg);
-        background-repeat: space
+        background-repeat: space;
+        background-position: center;
     }
 
     &-3{

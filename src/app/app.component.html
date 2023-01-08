@@ -1,4 +1,4 @@
-<div class="main">
+<div class="main" [style.backgroundColor]="randomPokemon == undefined && finished == false ? '#555261' : '#EBEBEB'">
 
   
     
@@ -7,12 +7,18 @@
     <img src="../assets/poketrivia-logo.svg" alt="">
 
     <dialog *ngIf="help">
-      <h4>Drag the pokemon cards to place them in the correct pokedex order.</h4>
-      <h4>Tap on the pokemon card and select which side is the correct one in the pokédex order.</h4>
+      <div>
+        <h4>Drag the pokemon cards to place them in the correct pokedex order.</h4>
+        <img src="../assets/desktop-tuto.png" alt="">
+      </div>
+      <div>
+        <h4>Tap on the pokemon card and select which side is the correct one in the pokédex order.</h4>
+        <img src="../assets/mobile-tuto.png" alt="">
+      </div>
     </dialog>
     <button class="btn-info" (click)="help = !help">
-      <p *ngIf="!help">?</p>
-      <p *ngIf="help">x</p>
+      <img src="../assets/question.svg" *ngIf="!help">
+      <img src="../assets/x.svg" *ngIf="help">
     </button>
 
     <h3>Select range:</h3>
@@ -26,12 +32,14 @@
         <option value="721">6th generation</option>
         <option value="809">7th generation</option>
         <option value="905" >8th generation</option>
-        <option value="1008">9th generation</option>
+        <option value="1000">9th generation</option>
     </select>
 
     <button (click)="start(); started = true">
-      <span *ngIf="!started">Start</span>
-      <span *ngIf="started">Loading...</span>
+      <img *ngIf="started" src="../assets/load.svg">
+      <p *ngIf="!started">Start</p>
+      <p *ngIf="started">Loading...</p>
+      
     </button>
 
     <div class="social-info">
@@ -43,6 +51,8 @@
   
   <div class="main-top" *ngIf="randomPokemon !== undefined || finished" >
     <app-hud *ngIf="life > 0 && randomPokemon !== undefined" [life]="life" [points]="points"></app-hud>
+
+    <img *ngIf="loading" class="load" src="../assets/load.svg">
 
     <div class="result-screen" *ngIf="life == 0 || finished">
       <img src="../assets/poketrivia-logo.svg" alt="">

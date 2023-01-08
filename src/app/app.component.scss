@@ -22,23 +22,15 @@
         top: 0;
         position: absolute;
 
+        @media (pointer:coarse) {
+            height: 65%;
+            // top: 20px;
+            position: fixed;
+        }
+       
+
     }
 
-    // @media (max-width: 600px) {
-    //     &::after{
-    //         content: 'Oh, it does not work on mobile yet. but I am working on it :)';
-    //         width: 100%;
-    //         height: 100%;
-    //         position: absolute;
-    //         top: 0;
-    //         left: 0;
-    //         background-color: dimgray;
-    //         color: white;
-    //         display: flex;
-    //         align-items: center;
-    //         justify-content: center;
-    //     }
-    // }
     
 }
 
@@ -132,7 +124,7 @@
     }
 
     button{
-        width: 100px;
+        width: 120px;
         height: 40px;
         border-radius: 5px;
         background-color: dimgray;
@@ -142,6 +134,22 @@
         margin-top: 20px;
         cursor: pointer;
         border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+
+        p{
+            font-size: 0.9em;
+            margin-left: 8px;
+        }
+        
+
+        img{
+            width: 20px;
+            margin: 0;
+            filter: brightness(9.5);
+        }
     }
 
     .btn-info{
@@ -149,15 +157,23 @@
         width: 30px;
         height: 30px;
         border-radius: 30px;
-        top: -12px;
+        top: 8px;
         right: 8px;
         border: 2px solid dimgray;
         background-color: transparent;
-        color: dimgray;
-        font-size: 1.1em;
         display: flex;
-        align-content: center;
         justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+
+
+        img{
+            margin-top: auto;
+            margin-bottom: auto;
+            height: 12px;
+            filter: none;
+        }
         
     }
 
@@ -173,11 +189,21 @@
         flex-direction: column;
         padding: 16px;
 
-        h4{
+        div{
             display: none;
+
+            img{
+                width: 100%;
+               }
+
+               h4{
+                margin-bottom: 8px;
+                color: #424242;
+               }
             &:nth-child(1){
                 @media (pointer:fine) {
                    display: block;
+
                 }
             }
 
@@ -213,6 +239,11 @@ footer{
     position: absolute;
     bottom: 8px;
     display: flex;
+    color: white;
+
+    a{
+        color: #b3acac;
+    }
 
     @media (max-width: 600px) {
         font-size: 0.8em;
@@ -221,3 +252,7 @@ footer{
 }
 
 
+.load{
+    position: absolute;
+    width: 80px;
+}

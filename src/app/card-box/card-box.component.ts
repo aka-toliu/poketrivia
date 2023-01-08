@@ -199,7 +199,10 @@ export class CardBoxComponent implements OnInit {
       if (event.target == drops[drops.length - 1]) {
         box.scrollTo((box.scrollWidth - 200), 0)
       }
+      
     }, 200);
+
+    
     
   }
 
