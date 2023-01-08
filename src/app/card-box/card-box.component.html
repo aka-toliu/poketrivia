@@ -8,7 +8,8 @@
     id="{{ pokemon.id }}" 
     [ngClass]="{
         'certo': pokemon.result == true,
-        'errado': pokemon.result == false}"
+        'errado': pokemon.result == false,
+        'over': life == 0}"
     >
         <p>{{ pokemon.name | titlecase }}</p>
         <h3>#{{ pokemon.id }}</h3>

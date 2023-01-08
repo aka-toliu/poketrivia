@@ -178,7 +178,7 @@ export class CardBoxComponent implements OnInit {
       }
     }
 
-    if(event.target.classList.contains('card-drop')){
+    if(event.target.classList.contains('card-drop') && !event.target.classList.contains('over')){
       event.target.classList.toggle('btn--actived');
     }
 
@@ -192,7 +192,7 @@ export class CardBoxComponent implements OnInit {
 
     setTimeout(() => {
       if (event.target == drops[drops.length - 1]) {
-        box.scrollTo(box.scrollWidth, 0)
+        box.scrollTo((box.scrollWidth - 200), 0)
       }
     }, 200);
     
