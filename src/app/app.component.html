@@ -73,7 +73,7 @@
 
   </div>
 
-  <app-card-box *ngIf="randomPokemon !== undefined  && pokebox !== undefined || finished"  ></app-card-box>
+  <app-card-box [life]="life" *ngIf="randomPokemon !== undefined  && pokebox !== undefined || finished"  ></app-card-box>
 
   <footer *ngIf="randomPokemon == undefined">
     <p>All data sourced from <a href="https://pokeapi.co/">PokéAPI.</a> Pokémon and Pokémon character names are trademarks of Nintendo®/Game Freak Inc.®.</p>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { PoketriviaService } from '../poketrivia.service';
 
 
@@ -13,6 +13,8 @@ export class CardBoxComponent implements OnInit {
   pokeIdRight: number = 0;
   pokeIdLeft: number = 0;
   result: any;
+  
+  @Input() public life!: any;
   // btnTouch: boolean = false;
   
 
@@ -155,12 +157,20 @@ export class CardBoxComponent implements OnInit {
     
   }
 
+  
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 
   touch(event: any){
-    
+   let box = event.target.parentNode;
+  //  console.log(box.scrollWidth);
+   
 
     let drops = document.querySelectorAll('.card-drop');
+
+
 
     for (let i = 0; i < drops.length; i++) {
       if(drops[i] !== event.target){
@@ -180,13 +190,18 @@ export class CardBoxComponent implements OnInit {
       }
     });
 
-
+    setTimeout(() => {
+      if (event.target == drops[drops.length - 1]) {
+        box.scrollTo(box.scrollWidth, 0)
+      }
+    }, 200);
     
   }
 
 
   touchValidade(event: any){
     let card = event.target.parentNode.parentNode;
+    let box = card.parentNode;
 
     if(event.target.classList.contains('L')){
 
@@ -210,14 +225,9 @@ export class CardBoxComponent implements OnInit {
         this.result = false;
       }
 
-      this.poketriviaService.randomPokemon.result = this.result;
-
+    this.poketriviaService.randomPokemon.result = this.result;
     this.poketriviaService.pokebox.push(this.poketriviaService.randomPokemon);
-
     this.poketriviaService.pokemon.splice(this.poketriviaService.randomPokemon.index, 1);
-
-    let box = event.target.parentNode;
-
     this.poketriviaService.randomizePokemon();
     this.poketriviaService.sortPokemon();
     
