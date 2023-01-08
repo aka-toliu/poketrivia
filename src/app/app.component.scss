@@ -172,6 +172,21 @@
         align-items: center;
         flex-direction: column;
         padding: 16px;
+
+        h4{
+            display: none;
+            &:nth-child(1){
+                @media (pointer:fine) {
+                   display: block;
+                }
+            }
+
+            &:nth-child(2){
+                @media (pointer:coarse) {
+                   display: block;
+                }
+            }
+        }
     }
 
     // p{

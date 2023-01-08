@@ -121,13 +121,18 @@ export class CardBoxComponent implements OnInit {
     event.target.classList.remove('left-place', 'right-place');
 
     this.poketriviaService.randomPokemon.result = this.result;
-
     this.poketriviaService.pokebox.push(this.poketriviaService.randomPokemon);
 
+    let idRecent = this.poketriviaService.randomPokemon.id
+
+    setTimeout(() => {
+      let recent = document.getElementById(idRecent);
+
+      recent?.scrollIntoView()
+      
+    }, 300);
+
     this.poketriviaService.pokemon.splice(this.poketriviaService.randomPokemon.index, 1);
-
-    let box = event.target.parentNode;
-
     this.poketriviaService.randomizePokemon();
     this.poketriviaService.sortPokemon();
     
@@ -227,6 +232,16 @@ export class CardBoxComponent implements OnInit {
 
     this.poketriviaService.randomPokemon.result = this.result;
     this.poketriviaService.pokebox.push(this.poketriviaService.randomPokemon);
+
+    let idRecent = this.poketriviaService.randomPokemon.id
+
+    setTimeout(() => {
+      let recent = document.getElementById(idRecent);
+
+      recent?.scrollIntoView()
+      
+    }, 300);
+    
     this.poketriviaService.pokemon.splice(this.poketriviaService.randomPokemon.index, 1);
     this.poketriviaService.randomizePokemon();
     this.poketriviaService.sortPokemon();
@@ -278,14 +293,19 @@ export class CardBoxComponent implements OnInit {
         this.result = false;
       }
 
-      this.poketriviaService.randomPokemon.result = this.result;
-
+    this.poketriviaService.randomPokemon.result = this.result;
     this.poketriviaService.pokebox.push(this.poketriviaService.randomPokemon);
 
+    let idRecent = this.poketriviaService.randomPokemon.id
+
+    setTimeout(() => {
+      let recent = document.getElementById(idRecent);
+
+      recent?.scrollIntoView()
+      
+    }, 300);
+
     this.poketriviaService.pokemon.splice(this.poketriviaService.randomPokemon.index, 1);
-
-    let box = event.target.parentNode;
-
     this.poketriviaService.randomizePokemon();
     this.poketriviaService.sortPokemon();
     
