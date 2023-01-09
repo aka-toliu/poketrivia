@@ -15,7 +15,6 @@ export class CardBoxComponent implements OnInit {
   result: any;
 
   @Input() public life!: any;
-  // btnTouch: boolean = false;
 
 
   constructor(private poketriviaService: PoketriviaService) {
@@ -31,37 +30,29 @@ export class CardBoxComponent implements OnInit {
 
     event.preventDefault();
 
-    // console.log(event.target.nextSibling);
-
     if (event.offsetX < 100) {
 
-      // console.log('esquerda');
-
       event.target.style.transform = "translateX(10px)"
-
       event.target.classList.add('left-place');
       event.target.classList.remove('right-place');
 
 
-
-
       if (event.target.previousSibling !== null && event.target.previousSibling.classList.contains('card-drop')) {
-        // console.log(event.target.previousSibling.id)
 
         if (event.target.previousSibling.id < this.poketriviaService.randomPokemon.id && event.target.id > this.poketriviaService.randomPokemon.id) {
-          // console.log('true');
 
           this.result = true;
 
         } else {
-          // console.log('false');
+
           this.result = false;
         }
       } else if (event.target.previousSibling === null && event.target.id > this.poketriviaService.randomPokemon.id) {
-        // console.log('true');
+
         this.result = true;
+
       } else {
-        // console.log('false');
+
         this.result = false;
       }
 
@@ -70,30 +61,29 @@ export class CardBoxComponent implements OnInit {
     }
 
     else if (event.offsetX > 100) {
-      // console.log('direita');
 
       event.target.classList.add('right-place');
       event.target.classList.remove('left-place');
-
       event.target.style.transform = "translateX(-10px)"
 
       if (event.target.nextSibling.tagName == 'DIV') {
-        // console.log(event.target.nextSibling.id)
 
         if (event.target.nextSibling.id > this.poketriviaService.randomPokemon.id && event.target.id < this.poketriviaService.randomPokemon.id) {
-          // console.log('true');
+
           this.result = true;
 
         } else {
-          // console.log('false');
+
           this.result = false;
+
         }
 
       } else if (event.target.nextSibling.tagName !== 'DIV' && event.target.id < this.poketriviaService.randomPokemon.id) {
-        // console.log('true');
+
         this.result = true;
+
       } else {
-        // console.log('false');
+
         this.result = false;
       }
 
@@ -106,9 +96,6 @@ export class CardBoxComponent implements OnInit {
   }
 
   dragLeave(event: any) {
-
-    // console.log(event);
-
 
     event.target.removeAttribute('style')
     event.target.classList.remove('left-place', 'right-place');
@@ -135,8 +122,6 @@ export class CardBoxComponent implements OnInit {
     this.poketriviaService.pokemon.splice(this.poketriviaService.randomPokemon.indexOf, 1);
     this.poketriviaService.randomizePokemon();
     this.poketriviaService.sortPokemon();
-    console.log(this.poketriviaService.pokemon);
-
 
 
     if (this.result === false) {
@@ -152,10 +137,6 @@ export class CardBoxComponent implements OnInit {
       this.poketriviaService.setHightScore();
 
     }
-
-
-
-
   }
 
 
@@ -265,20 +246,20 @@ export class CardBoxComponent implements OnInit {
       if (card.nextSibling.tagName == 'DIV') {
 
         if (card.nextSibling.id > this.poketriviaService.randomPokemon.id && card.id < this.poketriviaService.randomPokemon.id) {
-          console.log('true');
+
           this.result = true;
 
         } else {
-          console.log('false');
+
           this.result = false;
         }
 
       }
       else if (card.nextSibling.tagName !== 'DIV' && card.id < this.poketriviaService.randomPokemon.id) {
-        console.log('true');
+
         this.result = true;
       } else {
-        console.log('false');
+
         this.result = false;
       }
 
