@@ -201,8 +201,7 @@ export class CardBoxComponent implements OnInit {
       }
       
     }, 200);
-
-    
+  
     
   }
 

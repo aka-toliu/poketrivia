@@ -50,13 +50,18 @@ export class AppComponent {
     { 
       this.poketriviaService.pokemon = res.results;
       this.pokebox = this.poketriviaService.pokebox;
+
+      if(res !== undefined){
+        setTimeout(() => {
+          this.poketriviaService.randomizeInitPokemon();
+          this.poketriviaService.randomizePokemon();
+          this.randomPokemon = this.poketriviaService.randomPokemon;
+          this.initPokemon = this.poketriviaService.initPokemon;
+        }, this.timeout);
+      }
       
-      setTimeout(() => {
-        this.poketriviaService.randomizeInitPokemon();
-        this.poketriviaService.randomizePokemon();
-        this.randomPokemon = this.poketriviaService.randomPokemon;
-        this.initPokemon = this.poketriviaService.initPokemon;
-      }, this.timeout);
+      
+
     }
       
     )
@@ -168,18 +173,18 @@ export class AppComponent {
     { 
       this.poketriviaService.pokemon = res.results;
       this.pokebox = this.poketriviaService.pokebox;
-      
+
+      if(res !== undefined){
       setTimeout(() => {
         this.poketriviaService.randomizeInitPokemon();
         this.poketriviaService.randomizePokemon();
         this.randomPokemon = this.poketriviaService.randomPokemon;
         this.initPokemon = this.poketriviaService.initPokemon;
-
         this.loading = false;
-
-
-        
+       
       }, this.timeout);
+    }
+
     }
       
     )
