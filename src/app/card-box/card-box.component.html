@@ -14,7 +14,7 @@
         <p>{{ pokemon.name | titlecase }}</p>
         <h3>#{{ pokemon.id }}</h3>
         <div class="card-drop__sprite">
-            <img src="{{ pokemon.sprite }}" draggable="false">
+            <img src="{{ pokemon?.sprites.front_default }}" draggable="false">
         </div>
 
 

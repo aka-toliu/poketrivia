@@ -78,8 +78,8 @@
 
 
     <app-poke-card *ngIf="randomPokemon !== undefined && life > 0" [nome]="randomPokemon.name"
-      [sprite]="randomPokemon.dex?.sprites.front_default" [tipo1]="randomPokemon.dex?.types[0].type.name"
-      [tipo2]="randomPokemon.dex?.types[1] !== undefined ? randomPokemon.dex?.types[1].type.name : '' ">
+      [sprite]="randomPokemon?.sprites.front_default" [tipo1]="randomPokemon?.types[0].type.name"
+      [tipo2]="randomPokemon?.types[1] !== undefined ? randomPokemon?.types[1].type.name : '' ">
     </app-poke-card>
 
   </div>
