@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable, Subject } from 'rxjs';
-import { map, tap } from "rxjs/operators";
+
 
 @Injectable({
   providedIn: 'root'
@@ -35,8 +35,8 @@ export class PoketriviaService {
   private newpokemon: Subject<any> = new Subject()
   public newpokemon$: Observable<any> = this.newpokemon.asObservable()
 
-
   public initPokemon: any = {}
+
 
   private urlAPI: string = 'https://pokeapi.co/api/v2/pokemon';
 
@@ -56,43 +56,6 @@ export class PoketriviaService {
 
 
 
-
-
-  // public url: string = 'https://pokeapi.co/api/v2/pokemon?limit=151';
-
-
-
-
-
-  // get getAllPokemon():Observable<any>{
-  //   return this.http.get<any>(this.url).pipe(
-  //     tap(
-  //       res => res
-  //     ),
-  //     tap(res => {
-  //       res.results.map((resPokemon: any) =>{
-
-  //         this.getPokemon(resPokemon.url).subscribe(
-  //           res => resPokemon.dex = res
-  //         )
-
-  //       })
-  //     })
-  //   )
-  // }
-
-  // getPokemon(url: string):Observable<any>{
-  //   return this.http.get<any>(url).pipe(
-  //     map(
-  //       res => res
-  //     )
-  //   )
-  // }
-
-
-
-
-
   randomizePokemon() {
 
     // verifica se a array está vazia
@@ -109,7 +72,6 @@ export class PoketriviaService {
       this.getPokemon(this.pokemon[number].name).subscribe((pokemon) => {
         this.randomPokemon = pokemon;
         this.randomPokemon.indexOf = this.pokemon.indexOf(this.pokemon[number]);
-        // this.pokemon.splice(this.randomPokemon.indexOf, 1);
         this.newpokemon.next(pokemon);
       });
 
@@ -119,7 +81,6 @@ export class PoketriviaService {
       this.getPokemon(this.pokemon[number].name).subscribe((pokemon) => {
         this.randomPokemon = pokemon;
         this.randomPokemon.indexOf = this.pokemon.indexOf(this.pokemon[number]);
-        // this.pokemon.splice(this.randomPokemon.indexOf, 1);
         this.newpokemon.next(pokemon);
       });
     }
@@ -158,8 +119,6 @@ export class PoketriviaService {
   setPoints() {
     this.points = (this.points + 1);
     this.newpoints.next(this.points);
-    // console.log(this.points);
-
   }
 
   setHightScore() {
@@ -170,17 +129,8 @@ export class PoketriviaService {
     }
 
     localStorage.setItem('highscore', this.highscore);
-    this.newhighscore.next(this.highscore)
-
-    console.log(this.highscore);
-
+    this.newhighscore.next(this.highscore);
 
   }
-
-
-
-
-
-
 
 }

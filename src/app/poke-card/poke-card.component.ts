@@ -27,14 +27,12 @@ export class PokeCardComponent implements OnInit {
   }
 
   carddrag(event: any) {
-    // console.log(event);
 
     event.target.style.opacity = "0.2"
 
   }
 
   dragend(event: any) {
-    // console.log(event);
 
     event.target.style.opacity = "1"
 

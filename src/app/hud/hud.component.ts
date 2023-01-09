@@ -17,7 +17,7 @@ export class HudComponent implements OnInit {
   constructor(private poketriviaService: PoketriviaService) { 
     // this.life = this.poketriviaService.life;
 
-    // console.log(this.life);
+
     
   }
 
