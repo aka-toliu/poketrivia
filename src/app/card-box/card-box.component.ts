@@ -119,7 +119,8 @@ export class CardBoxComponent implements OnInit {
 
     }, 300);
 
-    this.poketriviaService.pokemon.splice(this.poketriviaService.randomPokemon.indexOf, 1);
+    // this.poketriviaService.pokemon.splice(this.poketriviaService.randomPokemon.indexOf, 1);
+    
     this.poketriviaService.randomizePokemon();
     this.poketriviaService.sortPokemon();
 
@@ -219,7 +220,7 @@ export class CardBoxComponent implements OnInit {
 
       }, 300);
 
-      this.poketriviaService.pokemon.splice(this.poketriviaService.randomPokemon.indexOf, 1);
+      // this.poketriviaService.pokemon.splice(this.poketriviaService.randomPokemon.indexOf, 1);
       this.poketriviaService.randomizePokemon();
       this.poketriviaService.sortPokemon();
 
@@ -275,7 +276,7 @@ export class CardBoxComponent implements OnInit {
 
       }, 300);
 
-      this.poketriviaService.pokemon.splice(this.poketriviaService.randomPokemon.indexOf, 1);
+      // this.poketriviaService.pokemon.splice(this.poketriviaService.randomPokemon.indexOf, 1);
       this.poketriviaService.randomizePokemon();
       this.poketriviaService.sortPokemon();
 

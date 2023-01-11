@@ -73,6 +73,7 @@ export class PoketriviaService {
         this.randomPokemon = pokemon;
         this.randomPokemon.indexOf = this.pokemon.indexOf(this.pokemon[number]);
         this.newpokemon.next(pokemon);
+        this.pokemon.splice(this.randomPokemon.indexOf, 1);
       });
 
     } else { // se for o ultimo da lista
@@ -82,6 +83,7 @@ export class PoketriviaService {
         this.randomPokemon = pokemon;
         this.randomPokemon.indexOf = this.pokemon.indexOf(this.pokemon[number]);
         this.newpokemon.next(pokemon);
+        this.pokemon.splice(this.randomPokemon.indexOf, 1);
       });
     }
 
