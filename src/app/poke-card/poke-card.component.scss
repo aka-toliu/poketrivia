@@ -12,6 +12,7 @@
     margin: 10px;
     cursor: grab;
     z-index: 10;
+    position: relative;
 
     &::after{
         content: '';
