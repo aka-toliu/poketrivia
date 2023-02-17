@@ -198,7 +198,7 @@
 
 .btn--actived{
 
-    @media (pointer:coarse) {
+    @media (-moz-touch-enabled: 1), (pointer:coarse), (max-width: 600px) {
         margin: 5px 80px!important;
     }
    
@@ -206,7 +206,7 @@
 
     .btns-touch{
 
-        @media (pointer:coarse) {
+        @media (-moz-touch-enabled: 1), (pointer:coarse), (max-width: 600px) {
             display: flex;
         }
         
