@@ -1,6 +1,6 @@
 # Poketrivia
 
-Source code for the web app: https://poke-trivia.vercel.app/
+Play here: https://poke-trivia.vercel.app/
 
 Share ideas, reports and critics here: [Poketriva discussions](https://github.com/byToliu/poketrivia/discussions) 
 
