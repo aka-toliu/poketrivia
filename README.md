@@ -2,6 +2,8 @@
 
 Play here: https://poke-trivia.vercel.app/
 
+![alt text](https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/75a331165877161.640f352a3e962.png)
+
 Share ideas, reports and critics here: [Poketriva discussions](https://github.com/byToliu/poketrivia/discussions) 
 
 ## Usage
