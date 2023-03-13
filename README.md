@@ -2,7 +2,7 @@
 
 Source code for the web app: https://poke-trivia.vercel.app/
 
-Share ideas, reports, critics and love here: [Poketriva discussions](https://github.com/byToliu/poketrivia/discussions) 
+Share ideas, reports and critics here: [Poketriva discussions](https://github.com/byToliu/poketrivia/discussions) 
 
 ## Usage
 
