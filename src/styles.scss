@@ -5,4 +5,60 @@
         padding: 0;
         box-sizing: border-box;
     }
+
+    --primary: #CC5478;
+    --secondary: #24243C;
+    --secondary-light: #7070A8;
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+button{
+    width: 100%;
+    height: 64px;
+    cursor: pointer;
+    border: none;
+    font-size: large;
+    color: white;
+    background-color: var(--secondary-light);
+    transition: transform, filter, .4s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+
+    &:hover{
+        filter: brightness(1.2);
+        transform: scale(.97);
+        transition: transform, filter, .4s;
+    }
+
+    i{
+        width: 24px;
+        height: 24px;
+        display: block;
+        left: 16px;
+        color: white;
+    }
+}
+
+select{
+    width: 100%;
+    height: 52px;
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: large;
+    color: var(--secondary);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url(./assets/icons/arrow-down.svg);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 95%;
+    outline: none;
+
 }
