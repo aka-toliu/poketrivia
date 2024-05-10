@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-card-dex',
-  standalone: true,
-  imports: [],
+  standalone: false,
   templateUrl: './card-dex.component.html',
   styleUrl: './card-dex.component.scss'
 })

@@ -1,0 +1,58 @@
+.c-card{
+    width: 200px;
+    height: 250px;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: -7px 5px 22.3px -7px rgba(0, 0, 0, 0.25);
+    border-bottom: 1px solid #D3CDCD;
+    padding: 12px;
+    position: relative;
+    user-select: none;
+    cursor: grab;
+
+    &::after{
+        content: '';
+        width: 16px;
+        height: 24px;
+        position: absolute;
+
+        right: 8px;
+        top: 8px;
+        background-image: url(../../../assets/icons/drag.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+
+    .card{
+        &__info{ height: 20%;}
+        &__img{ 
+            height: 80%; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    .types{
+        margin-top: 4px;
+        display: flex;
+        gap: 4px;
+    }
+
+    .poke{
+
+        &__sprite{
+            border: 1px solid #D3CDCD;
+            height: 150px;
+            width: 150px;
+        }
+
+        &__type{
+            font-size: .8em;
+            background-color: #D3CDCD;
+            padding: 4px 16px;
+            border-radius: 99px;
+        }
+    }
+}

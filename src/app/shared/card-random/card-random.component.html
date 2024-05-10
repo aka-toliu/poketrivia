@@ -1,1 +1,18 @@
-<p>card-random works!</p>
+<main class="c-card">
+
+    <div class="card__info">
+        <h3 class="poke__name">{{ name }}</h3>
+        <div class="types">
+
+            @for(type of types; track type){
+                <span class="poke__type">{{ type }}</span>
+            }
+
+        </div>
+    </div>
+
+    <div class="card__img">
+        <img src="../" class="poke__sprite">
+    </div>
+
+</main>
