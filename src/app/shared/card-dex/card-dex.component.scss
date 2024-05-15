@@ -1,4 +1,4 @@
-.c-card{
+.c-card-dex{
     width: 180px;
     height: 220px;
     border-radius: 8px;
@@ -8,6 +8,22 @@
     padding: 12px;
     position: relative;
     user-select: none;
+    transition: all .2s ease-in;
+
+    &::before{
+        content: '';
+        width: 100%;
+        transition: all .2s ease-in;
+    }
+
+    &::after{
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
 
     .card{
         &__info{ 
@@ -59,4 +75,26 @@
             border-radius: 99px;
         }
     }
+
+    @mixin spaceToDrop($side){
+        margin-#{$side}: 180px;
+        transition: all .2s ease-in;
+
+        &::before{
+            content: '';
+            width: 105%;
+            height: 100%;
+            position: absolute;
+            background-color: rgba(0, 255, 255, 0.247);
+            border-radius: 8px;
+            top: 0;
+            #{$side}: -105%;
+        }
+    }
+
+    &--left{ @include spaceToDrop('left')}
+    &--right{ @include spaceToDrop('right') }
+
+    &--erro{}
+    &--success{}
 }

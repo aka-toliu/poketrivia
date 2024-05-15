@@ -14,12 +14,12 @@
             <div class="hud__sequence">Sequence: {{ sequence }}</div>
         </nav>
 
-
-        <app-card-random ></app-card-random>
+        <app-card-random [name]="actualRandom.name" [num]="actualRandom.num" [types]="actualRandom.types"></app-card-random>
+        
     </div>
 
     <div class="c-dex">
-        <span class="dex__count"><b>Gen I to II</b> - 2 de 151</span>
+        <span class="dex__count"><b>Gen I to II</b> - {{ dex.length }} de 151</span>
        <div class="c-cards">
         @for(poke of dex; track poke){
             <app-card-dex [name]="poke.name" [num]="poke.num"></app-card-dex>

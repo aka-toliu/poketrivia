@@ -1,4 +1,4 @@
-<main #card class="c-card">
+<main #card class="c-card-dex" (dragover)="onDragOver($event)" (drop)="onDrop($event)" (dragleave)="onDragLeave($event)">
 
     <div class="card__info">
         <p class="poke__name" >{{ name }}</p>

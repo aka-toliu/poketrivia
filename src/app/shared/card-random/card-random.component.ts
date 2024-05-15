@@ -38,7 +38,7 @@ export class CardRandomComponent implements OnInit, AfterViewInit {
   }
 
   onDrag(event: Event){
-    console.log('dragging', event);
+    // console.log('dragging', event);
   }
 
   
