@@ -1,0 +1,62 @@
+.c-card{
+    width: 180px;
+    height: 220px;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: -7px 5px 22.3px -7px rgba(0, 0, 0, 0.25);
+    border-bottom: 1px solid #D3CDCD;
+    padding: 12px;
+    position: relative;
+    user-select: none;
+
+    .card{
+        &__info{ 
+            height: 20%;
+            width: 100%;
+            text-align: center;
+
+            .poke__number{
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                position: relative;
+                
+                &::after, &::before{
+                    content: '';
+                    width: 100%;
+                    height: 0px;
+                    border: 1px solid rgba(41, 37, 37, 0.199);
+                    display: block;
+                }
+            }
+        }
+        &__img{ 
+            height: 80%; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    .types{
+        margin-top: 4px;
+        display: flex;
+        gap: 4px;
+    }
+
+    .poke{
+
+        &__sprite{
+            border: 1px solid #D3CDCD;
+            height: 120px;
+            width: 120px;
+        }
+
+        &__type{
+            font-size: .8em;
+            background-color: #D3CDCD;
+            padding: 4px 16px;
+            border-radius: 99px;
+        }
+    }
+}

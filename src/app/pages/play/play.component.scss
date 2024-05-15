@@ -10,15 +10,25 @@
     }
 
     .c-random{
-        height: 60%;
+        height: 55%;
         justify-content: center;
     }
     
     .c-dex{
-        height: 40%;
+        height: 45%;
         background-color: var(--secondary);
         justify-content: flex-start;
         position: relative;
+        align-items: flex-end;
+    }
+
+    .c-cards{
+        height: 85%;
+        min-width: 100%;
+        overflow-x: auto;
+        display: flex;
+        gap: 20px;
+        padding: 0 16px;
     }
 
     .dex{

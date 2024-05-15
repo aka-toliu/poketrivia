@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-card-dex',
@@ -8,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class CardDexComponent {
 
+  @Input() name!: string;
+  @Input() num!: number;
+  @Input() img!: string;
+
+  
+  @ViewChild('card') card!: ElementRef;
+  
 }

@@ -1,7 +1,11 @@
-<main class="c-card">
+<main #card class="c-card" draggable="true" 
+(dragstart)="onStart($event)" 
+(drag)="onDrag($event)" 
+(dragend)="onEnd($event)" 
+>
 
     <div class="card__info">
-        <h3 class="poke__name">{{ name }}</h3>
+        <h3 class="poke__name" >{{ name }}</h3>
         <div class="types">
 
             @for(type of types; track type){

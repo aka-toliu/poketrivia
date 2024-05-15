@@ -14,5 +14,10 @@ export class PlayComponent {
   public sequence: number = 0;
   public bestSequence: number = 0;
   public count: number = 0;
+  public dex: any[] = [
+    {name: 'Name', num: 123}, 
+    {name: 'Name', num: 123}, 
+    {name: 'Name', num: 123}, 
+  ]
 
 }

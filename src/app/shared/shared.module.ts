@@ -12,7 +12,8 @@ import { CardDexComponent } from './card-dex/card-dex.component';
 
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    
   ],
   exports: [
     CardRandomComponent,

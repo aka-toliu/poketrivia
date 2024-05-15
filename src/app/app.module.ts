@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from '../environments/environment';
 import { RouterModule } from '@angular/router';
+import { NgDragDropModule } from 'ng-drag-drop';
 
 
 
@@ -15,6 +16,7 @@ import { RouterModule } from '@angular/router';
     RouterModule,
     SharedModule,
     AngularFireModule.initializeApp(environment.firebase),
+    NgDragDropModule.forRoot()
   ]
 })
 export class AppModule { }
