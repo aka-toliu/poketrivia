@@ -6,13 +6,14 @@
 ```
 🎨 style: discribe the activity
 🔨 fix: discribe the activity
-📝 doc: discribe the activity
+📚 :books: doc: discribe the activity
 🧱 refactor: discribe the activity
-✨ feat: discribe the new feature
-🐞 bugfix: discribe the bug
+:sparkles: feat: discribe the new feature
+:bug: bugfix: discribe the bug
 🚀 perf: discribe the activity
 ↪️ revert: discribe the activity
 🧪 test: discribe the activity
+🔖 :bookmark: versionamento
 ```
 
 ### Adding scope
