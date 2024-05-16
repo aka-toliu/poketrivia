@@ -4,34 +4,44 @@
 ### Main
 
 ```
-🎨 style: discribe the activity
-🔨 fix: discribe the activity
-📚 :books: doc: discribe the activity
-🧱 refactor: discribe the activity
-:sparkles: feat: discribe the new feature
-:bug: bugfix: discribe the bug
-🚀 perf: discribe the activity
-↪️ revert: discribe the activity
-🧪 test: discribe the activity
-🔖 :bookmark: versionamento
+🎉 :tada: init:
+🎨 :art: style: 
+🔧 :wrench: fix: 
+📚 :books: doc: 
+🔨 :hammer: refactor: 
+✨ :sparkles: feat:
+🐛 :bug: bugfix: 
+🐎 :racehorse: peform:
+⏪ :rewind: revert: 
+✔️ :heavy_check_mark: test: 
+🔖 :bookmark: tag: 
+⚡ :zap: update:
+🔒 :lock: security: 
+⬆️ :arrow_up: upgrade:
+⬇️ :arrow_down: downgrade:
+➖ :heavy_minus_sign:
+➕ :heavy_plus_sign:
+🔀 :twisted_rightwards_arrows: merge:
+🚧 :construction: wip:
+🚚 :truck: move:
 ```
 
 ### Adding scope
 
 ```
-🧱 refactor(home): discribe the activity
+🔨 :hammer: refactor(home): discribe the activity
 ```
 
 ### Adding specification
 
 ```
-🐞 bugfix #123: discribe the bug
+🐛 :bug: bugfix #123: discribe the bug
 ```
 
 ### Adding Status
 
 ```
-🎨 style[init]: discribe the activity
-🎨 style[wip]: discribe the activity
-🎨 style[complete]: discribe the activity
+🎨 :art: style[init]: discribe the activity
+🎨 :art: style[wip]: discribe the activity
+🎨 :art: style[complete]: discribe the activity
 ```

@@ -8,22 +8,14 @@
     padding: 12px;
     position: relative;
     user-select: none;
-    transition: all .2s ease-in;
+    transition: margin .2s ease-in;
 
-    &::before{
-        content: '';
-        width: 100%;
-        transition: all .2s ease-in;
-    }
 
     &::after{
-        content: '';
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
+        transition: all .4s;
     }
+
+
 
     .card{
         &__info{ 
@@ -78,17 +70,32 @@
 
     @mixin spaceToDrop($side){
         margin-#{$side}: 180px;
-        transition: all .2s ease-in;
+        transition: margin-#{$side} .2s ease-in;
+        z-index: 5;
 
         &::before{
             content: '';
-            width: 105%;
+            width: 210%;
             height: 100%;
             position: absolute;
-            background-color: rgba(0, 255, 255, 0.247);
+            // background-color: rgba(0, 255, 255, 0.247);
+            border-radius: 8px;
+            top: 0;
+            #{$side}: -110%;
+
+        }
+
+        &::after{
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-color: rgba(14, 13, 36, 0.418);
             border-radius: 8px;
             top: 0;
             #{$side}: -105%;
+            opacity: 1;
+            transition: all .4s;
         }
     }
 
