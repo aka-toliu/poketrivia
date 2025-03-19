@@ -8,7 +8,7 @@ Challenge your Pokémon Master skills with Poketrivia, a web game inspired by [W
 
 ## ️🕹️ How to Play
 
-1.  Go to [Poketrivia](poke-trivia.vercel.app).
+1.  Go to [Poketrivia](https://poke-trivia.vercel.app).
 2.  Drag the Pokémon cards into the correct Pokédex order to test your knowledge and have fun.
 4.  Copy and post your result on social media to challenge your friends!
 
@@ -26,7 +26,7 @@ This project was built with the following technologies:
 
 ## 🎮 Play Now!
 
-▶️ [poke-trivia.vercel.app](poke-trivia.vercel.app)
+▶️ [poke-trivia.vercel.app]([https://poke-trivia.vercel.app](https://poke-trivia.vercel.app))
 
 <br>
 
